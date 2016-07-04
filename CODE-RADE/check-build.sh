@@ -22,9 +22,6 @@ echo $?
 
 export FMD=${SOFT_DIR}
 make install
-
-
-
 mkdir -p ${REPO_DIR}
 mkdir -p modules
 (
@@ -56,3 +53,13 @@ MODULE_FILE
 
 mkdir -p ${PHYSICAL_MODULES}/${NAME}
 cp modules/$VERSION ${PHYSICAL_MODULES}/${NAME}
+module purge
+
+module add ci
+echo "checking the modulefile"
+
+module add ${NAME}/${VERSION}
+
+which minenergy
+
+minenergy AV18-UsrgD2000f-v11ls-2.0.int He4.fmd

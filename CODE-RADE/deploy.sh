@@ -41,3 +41,12 @@ prepend-path LDFLAGS           "-L${FMD_DIR}/lib"
 prepend-path PATH              "$::env(FMD_DIR)/bin"
 MODULE_FILE
 ) > ${PHYSICAL_MODULES}/${NAME}/${VERSION}
+module purge
+module add  deploy
+echo "checking the modulefile"
+
+module add ${NAME}/${VERSION}
+
+which minenergy
+
+minenergy AV18-UsrgD2000f-v11ls-2.0.int He4.fmd

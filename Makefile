@@ -601,10 +601,10 @@ ifndef FMD
 		$(ECHO) "Environment Variable FMD not defined"
 else
 		mkdir -p $(FMD)/bin $(FMD)/data $(FMD)/lib
-		$(INSTALL) $(BINARIES) $(FMD)/bin
-		$(INSTALL) $(BINARIESMPI) $(FMD)/bin
-		$(INSTALL) data/* $(FMD)/data
-		$(INSTALL) lib/* $(FMD)/lib
+		$(INSTALL) -m 755 $(BINARIES) $(FMD)/bin
+		$(INSTALL) -m 755 $(BINARIESMPI) $(FMD)/bin
+		$(INSTALL) -m 744 data/* $(FMD)/data
+		$(INSTALL) -m 744 lib/* $(FMD)/lib
 endif
 
 doc:
