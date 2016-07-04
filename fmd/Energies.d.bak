@@ -1,0 +1,8 @@
+Energies.o Energies.d : Energies.c \
+ /cvmfs/fastrepo.sagrid.ac.za//generic/u1404/x86_64/ncurses/5.9/include/ncurses/ncurses.h \
+ /cvmfs/fastrepo.sagrid.ac.za//generic/u1404/x86_64/ncurses/5.9/include/ncurses/ncurses_dll.h \
+ /cvmfs/fastrepo.sagrid.ac.za//generic/u1404/x86_64/ncurses/5.9/include/ncurses/unctrl.h \
+ /cvmfs/fastrepo.sagrid.ac.za//generic/u1404/x86_64/ncurses/5.9/include/ncurses/curses.h \
+ SlaterDet.h Gaussian.h Projection.h Interaction.h Observables.h \
+ Symmetry.h KineticEnergy.h CenterofMass.h Potential.h Hamiltonian.h \
+ ProjectedObservables.h ../misc/utils.h ../misc/physics.h

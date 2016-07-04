@@ -1,0 +1,942 @@
+//
+// time: Mon Jun  2 14:25:25 2003
+//
+// version: 3.1.2 (format), 4.1.1 (DX)
+//
+//
+// MODULE main
+//
+// comment: A general purpose visual program for gridded, three-dimensional data has been used.
+// comment: 
+// comment: For scalar, position-dependent data, an translucent isosurface is created. You can change the isosurface value using the interactor in the control panel. Otherwise, glyphs are drawn.
+// comment: 
+// comment: In either case, a colored cutting plane has been drawn through the data. You can use the interactor in the control panel to change the normal, or orientation, of the cutting plane.
+// comment: 
+// comment: If you would like to modify or use this visual program in the future, choose Open Visual Program Editor from the Windows menu, and then choose Save As from the File menu of the VPE.
+// page assignment: General	order=1, windowed=0, showing=1
+// page assignment: IsoSurface	order=3, windowed=0, showing=0
+// page assignment: Rendering	order=4, windowed=0, showing=0
+// page assignment: ScanPlane	order=2, windowed=0, showing=0
+// workspace: width = 496, height = 355
+// layout: snap = 0, width = 50, height = 50, align = NN
+//
+macro main(
+) -> (
+) {
+    // 
+    // node AmbientLight[1]: x = 45, y = 314, inputs = 1, label = AmbientLight
+    // input[1]: defaulting = 0, visible = 1, type = 8, value = [0.15 0.15 0.15]
+    // page group: Rendering
+    //
+main_AmbientLight_1_out_1 = 
+    AmbientLight(
+    main_AmbientLight_1_in_1
+    ) [instance: 1, cache: 1];
+    // 
+    // node FileSelector[1]: x = 38, y = 0, inputs = 0, label = FileSelector
+    // output[1]: visible = 1, type = 32, value =dataimport
+    // output[2]: visible = 1, type = 32, value = nucleusname
+    // page group: General
+    //
+    // 
+    // node String[1]: x = 159, y = 0, inputs = 0, label = String
+    // output[1]: visible = 1, type = 32, value = "dx"
+    // page group: General
+    //
+    // 
+    // node Import[1]: x = 110, y = 109, inputs = 6, label = Import
+    // input[1]: defaulting = 1, visible = 1, type = 32, value = "/usr/lpp/dx/samples/data/southeastern_topo.dx"
+    // page group: General
+    //
+main_Import_1_out_1 = 
+    Import(
+    main_FileSelector_1_out_2,
+    main_Import_1_in_2,
+    main_String_1_out_1,
+    main_Import_1_in_4,
+    main_Import_1_in_5,
+    main_Import_1_in_6
+    ) [instance: 1, cache: 1];
+    // 
+    // node Transmitter[1]: x = 128, y = 189, inputs = 1, label = Data
+    // page group: General
+    //
+Data = main_Import_1_out_1;
+    // 
+    // node Receiver[7]: x = 51, y = 0, inputs = 1, label = Data
+    // page group: ScanPlane
+    //
+main_Receiver_7_out_1[cache: 0] = Data;
+    // 
+    // node MapToPlane[5]: x = 294, y = 119, inputs = 3, label = MapToPlane
+    // input[2]: defaulting = 0, visible = 1, type = 8, value = [0 0 0]
+    // input[3]: defaulting = 0, visible = 1, type = 8, value = [0 0 1]
+    // page group: ScanPlane
+    //
+main_MapToPlane_5_out_1 = 
+    MapToPlane(
+    main_Receiver_7_out_1,
+    main_MapToPlane_5_in_2,
+    main_MapToPlane_5_in_3
+    ) [instance: 5, cache: 1];
+    // 
+    // node Colormap[3]: x = 153, y = 119, inputs = 19, label = Colormap
+    // input[1]: defaulting = 0, visible = 0, type = 16777224, value = { [0.03525641 0.83157895] [0.74038462 0.0] }
+    // input[2]: defaulting = 0, visible = 0, type = 16777224, value = { [0.073717949 0.0] [0.17307692 1.0] }
+    // input[3]: defaulting = 0, visible = 0, type = 16777224, value = { [0.10576923 0.0] [0.31089744 1.0] }
+    // input[4]: defaulting = 0, visible = 0, type = 16777224, value = { [0.092948718 0.02247191] [0.21794872 1.0] }
+    // input[5]: defaulting = 0, visible = 0, type = 32, value = "Colormap_3"
+    // input[7]: defaulting = 1, visible = 0, type = 5, value = 0.0
+    // input[8]: defaulting = 1, visible = 0, type = 5, value = 1.4
+    // input[9]: defaulting = 1, visible = 0, type = 1, value = 20
+    // input[12]: defaulting = 0, visible = 0, type = 16777221, value = { 0.0 1.4 }
+    // page group: ScanPlane
+    // window: position = (0.4852,0.5078), size = 0.5078x0.4395
+    //
+main_Colormap_3_out_1[cache: 2],
+main_Colormap_3_out_2[cache: 2] = 
+    Colormap(
+    main_Colormap_3_in_1,
+    main_Colormap_3_in_2,
+    main_Colormap_3_in_3,
+    main_Colormap_3_in_4,
+    main_Colormap_3_in_5,
+    main_Colormap_3_in_6,
+    main_Colormap_3_in_7,
+    main_Colormap_3_in_8,
+    main_Colormap_3_in_9,
+    main_Colormap_3_in_10,
+    main_Colormap_3_in_11,
+    main_Colormap_3_in_12,
+    main_Colormap_3_in_13,
+    main_Colormap_3_in_14,
+    main_Colormap_3_in_15,
+    main_Colormap_3_in_16,
+    main_Colormap_3_in_17,
+    main_Colormap_3_in_18,
+    main_Colormap_3_in_19
+    ) [instance: 3, cache: 1];
+    // 
+    // node Color[6]: x = 304, y = 219, inputs = 5, label = Color
+    // input[2]: defaulting = 1, visible = 1, type = 32, value = "blue"
+    // page group: ScanPlane
+    //
+main_Color_6_out_1 = 
+    Color(
+    main_MapToPlane_5_out_1,
+    main_Colormap_3_out_1,
+    main_Colormap_3_out_2,
+    main_Color_6_in_4,
+    main_Color_6_in_5
+    ) [instance: 6, cache: 1];
+    // 
+    // node MapToPlane[6]: x = 394, y = 122, inputs = 3, label = MapToPlane
+    // input[2]: defaulting = 0, visible = 1, type = 8, value = [0 0 0]
+    // input[3]: defaulting = 0, visible = 1, type = 8, value = [1 0 0]
+    // page group: ScanPlane
+    //
+main_MapToPlane_6_out_1 = 
+    MapToPlane(
+    main_Receiver_7_out_1,
+    main_MapToPlane_6_in_2,
+    main_MapToPlane_6_in_3
+    ) [instance: 6, cache: 1];
+    // 
+    // node Color[10]: x = 404, y = 219, inputs = 5, label = Color
+    // input[2]: defaulting = 1, visible = 1, type = 32, value = "blue"
+    // page group: ScanPlane
+    //
+main_Color_10_out_1 = 
+    Color(
+    main_MapToPlane_6_out_1,
+    main_Colormap_3_out_1,
+    main_Colormap_3_out_2,
+    main_Color_10_in_4,
+    main_Color_10_in_5
+    ) [instance: 10, cache: 1];
+    // 
+    // node MapToPlane[7]: x = 494, y = 119, inputs = 3, label = MapToPlane
+    // input[2]: defaulting = 0, visible = 1, type = 8, value = [0 0 0]
+    // input[3]: defaulting = 0, visible = 1, type = 8, value = [0 1 0]
+    // page group: ScanPlane
+    //
+main_MapToPlane_7_out_1 = 
+    MapToPlane(
+    main_Receiver_7_out_1,
+    main_MapToPlane_7_in_2,
+    main_MapToPlane_7_in_3
+    ) [instance: 7, cache: 1];
+    // 
+    // node Color[12]: x = 504, y = 219, inputs = 5, label = Color
+    // input[2]: defaulting = 1, visible = 1, type = 32, value = "blue"
+    // page group: ScanPlane
+    //
+main_Color_12_out_1 = 
+    Color(
+    main_MapToPlane_7_out_1,
+    main_Colormap_3_out_1,
+    main_Colormap_3_out_2,
+    main_Color_12_in_4,
+    main_Color_12_in_5
+    ) [instance: 12, cache: 1];
+    // 
+    // node Collect[6]: x = 404, y = 319, inputs = 3, label = Collect
+    // page group: ScanPlane
+    //
+main_Collect_6_out_1 = 
+    Collect(
+    main_Color_6_out_1,
+    main_Color_10_out_1,
+    main_Color_12_out_1
+    ) [instance: 6, cache: 1];
+    // 
+    // node ClipBox[1]: x = 410, y = 419, inputs = 2, label = ClipBox
+    // input[2]: defaulting = 0, visible = 1, type = 16777224, value = {[-0.01, -0.01, -0.01], [5, 5, 5]}
+    // page group: ScanPlane
+    //
+main_ClipBox_1_out_1 = 
+    ClipBox(
+    main_Collect_6_out_1,
+    main_ClipBox_1_in_2
+    ) [instance: 1, cache: 1];
+    // 
+    // node Transmitter[17]: x = 505, y = 419, inputs = 1, label = CutPlanes
+    // page group: ScanPlane
+    //
+CutPlanes = main_ClipBox_1_out_1;
+    // 
+    // node Receiver[16]: x = 59, y = 14, inputs = 1, label = CutPlanes
+    // page group: Rendering
+    //
+main_Receiver_16_out_1[cache: 0] = CutPlanes;
+    // 
+    // node Camera[1]: x = 265, y = 14, inputs = 9, label = Camera
+    // input[1]: defaulting = 0, visible = 0, type = 8, value = [0 0 -0.2]
+    // input[2]: defaulting = 0, visible = 0, type = 8, value = [15 25 10]
+    // input[3]: defaulting = 1, visible = 0, type = 5, value = 100.0
+    // input[4]: defaulting = 0, visible = 0, type = 1, value = 432
+    // input[5]: defaulting = 0, visible = 0, type = 5, value = 1.0
+    // input[6]: defaulting = 0, visible = 0, type = 8, value = [1 0 0]
+    // input[7]: defaulting = 0, visible = 0, type = 3, value = 1
+    // input[8]: defaulting = 0, visible = 0, type = 5, value = 20.5
+    // input[9]: defaulting = 0, visible = 0, type = 8, value = NULL
+    // page group: Rendering
+    //
+main_Camera_1_out_1 = 
+    Camera(
+    main_Camera_1_in_1,
+    main_Camera_1_in_2,
+    main_Camera_1_in_3,
+    main_Camera_1_in_4,
+    main_Camera_1_in_5,
+    main_Camera_1_in_6,
+    main_Camera_1_in_7,
+    main_Camera_1_in_8,
+    main_Camera_1_in_9
+    ) [instance: 1, cache: 1];
+    // 
+    // node AutoAxes[1]: x = 158, y = 14, inputs = 19, label = AutoAxes
+    // input[4]: defaulting = 0, visible = 0, type = 1, value = 0
+    // input[5]: defaulting = 0, visible = 0, type = 16777224, value = {[-4 -4 -4], [4 4 4]}
+    // input[6]: defaulting = 0, visible = 0, type = 3, value = 0
+    // input[7]: defaulting = 0, visible = 0, type = 3, value = 0
+    // input[9]: defaulting = 0, visible = 0, type = 3, value = 1
+    // input[10]: defaulting = 0, visible = 0, type = 16777248, value = {"clear","Gray25","Gray35","black"}
+    // input[11]: defaulting = 0, visible = 0, type = 16777248, value = {"background","grid","ticks","labels"}
+    // input[14]: defaulting = 0, visible = 0, type = 16777221, value = { -5.0 -4.0 -3.0 -2.0 -1.0 0.0 1.0 2.0 3.0 4.0 5.0 }
+    // input[15]: defaulting = 0, visible = 0, type = 16777221, value = { -5.0 -4.0 -3.0 -2.0 -1.0 0.0 1.0 2.0 3.0 4.0 5.0 }
+    // input[16]: defaulting = 0, visible = 0, type = 16777221, value = { -5.0 -4.0 -3.0 -2.0 -1.0 0.0 1.0 2.0 3.0 4.0 5.0 }
+    // input[17]: defaulting = 1, visible = 0, type = 16777248, value = {""}
+    // input[18]: defaulting = 1, visible = 0, type = 16777248, value = {""}
+    // input[19]: defaulting = 1, visible = 0, type = 16777248, value = {""}
+    // page group: Rendering
+    //
+main_AutoAxes_1_out_1[cache: 0] = 
+    AutoAxes(
+    main_Receiver_16_out_1,
+    main_Camera_1_out_1,
+    main_AutoAxes_1_in_3,
+    main_AutoAxes_1_in_4,
+    main_AutoAxes_1_in_5,
+    main_AutoAxes_1_in_6,
+    main_AutoAxes_1_in_7,
+    main_AutoAxes_1_in_8,
+    main_AutoAxes_1_in_9,
+    main_AutoAxes_1_in_10,
+    main_AutoAxes_1_in_11,
+    main_AutoAxes_1_in_12,
+    main_AutoAxes_1_in_13,
+    main_AutoAxes_1_in_14,
+    main_AutoAxes_1_in_15,
+    main_AutoAxes_1_in_16,
+    main_AutoAxes_1_in_17,
+    main_AutoAxes_1_in_18,
+    main_AutoAxes_1_in_19
+    ) [instance: 1, cache: 1];
+    // 
+    // node Caption[3]: x = 364, y = 14, inputs = 9, label = Caption
+    // input[1]: defaulting = 0, visible = 1, type = 32, value = "FMD-Group @ GSI, 2001 "
+    // input[2]: defaulting = 0, visible = 1, type = 8, value = [.99 .02]
+    // input[4]: defaulting = 1, visible = 0, type = 8, value = NULL
+    // input[5]: defaulting = 1, visible = 0, type = 5, value = NULL
+    // input[6]: defaulting = 0, visible = 0, type = 1, value = 12
+    // input[7]: defaulting = 0, visible = 0, type = 32, value = "roman_s"
+    // input[8]: defaulting = 0, visible = 0, type = 8, value = [0 1]
+    // page group: Rendering
+    //
+main_Caption_3_out_1[cache: 0] = 
+    Caption(
+    main_Caption_3_in_1,
+    main_Caption_3_in_2,
+    main_Caption_3_in_3,
+    main_Caption_3_in_4,
+    main_Caption_3_in_5,
+    main_Caption_3_in_6,
+    main_Caption_3_in_7,
+    main_Caption_3_in_8,
+    main_Caption_3_in_9
+    ) [instance: 3, cache: 1];
+    // 
+    // node String[5]: x = 232, y = 0, inputs = 0, label = String
+    // output[1]: visible = 1, type = 32, value = nucleusname
+    // page group: General
+    //
+    // 
+    // node Transmitter[12]: x = 227, y = 114, inputs = 1, label = Nucleus
+    // page group: General
+    //
+Nucleus = main_String_5_out_1;
+    // 
+    // node Receiver[22]: x = 465, y = 14, inputs = 1, label = Nucleus
+    // page group: Rendering
+    //
+main_Receiver_22_out_1[cache: 0] = Nucleus;
+    // 
+    // node Caption[4]: x = 464, y = 114, inputs = 9, label = Caption
+    // input[1]: defaulting = 1, visible = 1, type = 32, value = "nucleusname"
+    // input[2]: defaulting = 0, visible = 1, type = 8, value = [.03 .97]
+    // input[6]: defaulting = 0, visible = 0, type = 1, value = 30
+    // input[7]: defaulting = 0, visible = 0, type = 32, value = "roman_d"
+    // page group: Rendering
+    //
+main_Caption_4_out_1 = 
+    Caption(
+    main_Receiver_22_out_1,
+    main_Caption_4_in_2,
+    main_Caption_4_in_3,
+    main_Caption_4_in_4,
+    main_Caption_4_in_5,
+    main_Caption_4_in_6,
+    main_Caption_4_in_7,
+    main_Caption_4_in_8,
+    main_Caption_4_in_9
+    ) [instance: 4, cache: 1];
+    // 
+    // node Receiver[8]: x = 73, y = 14, inputs = 1, label = Data
+    // page group: IsoSurface
+    //
+main_Receiver_8_out_1[cache: 0] = Data;
+    // 
+    // node ScalarList[1]: x = 204, y = 14, inputs = 11, label = ScalarList
+    // input[1]: defaulting = 0, visible = 0, type = 32, value = "ScalarList_1"
+    // input[2]: visible = 0
+    // input[3]: defaulting = 0, visible = 0, type = 16777221, value = { 0.5 }
+    // input[4]: defaulting = 1, visible = 0, type = 3, value = 0
+    // input[5]: defaulting = 1, visible = 0, type = 5, value = -1000000.0
+    // input[6]: defaulting = 1, visible = 0, type = 5, value = 1000000.0
+    // input[7]: defaulting = 1, visible = 0, type = 5, value = 1.0
+    // input[9]: defaulting = 1, visible = 0, type = 1, value = 5
+    // output[1]: visible = 1, type = 16777221, value = { 0.5 }
+    // page group: IsoSurface
+    //
+    // 
+    // node Isosurface[1]: x = 152, y = 114, inputs = 6, label = Isosurface
+    // input[3]: defaulting = 1, visible = 1, type = 1, value = NULL
+    // page group: IsoSurface
+    //
+main_Isosurface_1_out_1 = 
+    Isosurface(
+    main_Receiver_8_out_1,
+    main_ScalarList_1_out_1,
+    main_Isosurface_1_in_3,
+    main_Isosurface_1_in_4,
+    main_Isosurface_1_in_5,
+    main_Isosurface_1_in_6
+    ) [instance: 1, cache: 1];
+    // 
+    // node Color[1]: x = 155, y = 214, inputs = 5, label = Color
+    // input[2]: defaulting = 0, visible = 1, type = 32, value = "white"
+    // input[3]: defaulting = 0, visible = 1, type = 5, value = 1.0
+    // page group: IsoSurface
+    //
+main_Color_1_out_1 = 
+    Color(
+    main_Isosurface_1_out_1,
+    main_Color_1_in_2,
+    main_Color_1_in_3,
+    main_Color_1_in_4,
+    main_Color_1_in_5
+    ) [instance: 1, cache: 1];
+    // 
+    // node ClipPlane[2]: x = 155, y = 314, inputs = 3, label = ClipPlane
+    // input[2]: defaulting = 0, visible = 1, type = 8, value = [-0.1 0 0]
+    // input[3]: defaulting = 0, visible = 1, type = 8, value = [1 0 0]
+    // page group: IsoSurface
+    //
+main_ClipPlane_2_out_1 = 
+    ClipPlane(
+    main_Color_1_out_1,
+    main_ClipPlane_2_in_2,
+    main_ClipPlane_2_in_3
+    ) [instance: 2, cache: 1];
+    // 
+    // node Isosurface[3]: x = 252, y = 114, inputs = 6, label = Isosurface
+    // input[3]: defaulting = 1, visible = 1, type = 1, value = NULL
+    // page group: IsoSurface
+    //
+main_Isosurface_3_out_1 = 
+    Isosurface(
+    main_Receiver_8_out_1,
+    main_ScalarList_1_out_1,
+    main_Isosurface_3_in_3,
+    main_Isosurface_3_in_4,
+    main_Isosurface_3_in_5,
+    main_Isosurface_3_in_6
+    ) [instance: 3, cache: 1];
+    // 
+    // node Color[11]: x = 255, y = 214, inputs = 5, label = Color
+    // input[2]: defaulting = 0, visible = 1, type = 32, value = "white"
+    // input[3]: defaulting = 0, visible = 1, type = 5, value = 1.0
+    // page group: IsoSurface
+    //
+main_Color_11_out_1 = 
+    Color(
+    main_Isosurface_3_out_1,
+    main_Color_11_in_2,
+    main_Color_11_in_3,
+    main_Color_11_in_4,
+    main_Color_11_in_5
+    ) [instance: 11, cache: 1];
+    // 
+    // node ClipPlane[5]: x = 255, y = 314, inputs = 3, label = ClipPlane
+    // input[2]: defaulting = 0, visible = 1, type = 8, value = [0 0 -0.1]
+    // input[3]: defaulting = 0, visible = 1, type = 8, value = [0 0 1]
+    // page group: IsoSurface
+    //
+main_ClipPlane_5_out_1 = 
+    ClipPlane(
+    main_Color_11_out_1,
+    main_ClipPlane_5_in_2,
+    main_ClipPlane_5_in_3
+    ) [instance: 5, cache: 1];
+    // 
+    // node Isosurface[4]: x = 352, y = 114, inputs = 6, label = Isosurface
+    // input[3]: defaulting = 1, visible = 1, type = 1, value = NULL
+    // page group: IsoSurface
+    //
+main_Isosurface_4_out_1 = 
+    Isosurface(
+    main_Receiver_8_out_1,
+    main_ScalarList_1_out_1,
+    main_Isosurface_4_in_3,
+    main_Isosurface_4_in_4,
+    main_Isosurface_4_in_5,
+    main_Isosurface_4_in_6
+    ) [instance: 4, cache: 1];
+    // 
+    // node Color[13]: x = 355, y = 214, inputs = 5, label = Color
+    // input[2]: defaulting = 0, visible = 1, type = 32, value = "white"
+    // input[3]: defaulting = 0, visible = 1, type = 5, value = 1.0
+    // page group: IsoSurface
+    //
+main_Color_13_out_1 = 
+    Color(
+    main_Isosurface_4_out_1,
+    main_Color_13_in_2,
+    main_Color_13_in_3,
+    main_Color_13_in_4,
+    main_Color_13_in_5
+    ) [instance: 13, cache: 1];
+    // 
+    // node ClipPlane[6]: x = 355, y = 314, inputs = 3, label = ClipPlane
+    // input[2]: defaulting = 0, visible = 1, type = 8, value = [0 -0.1 0]
+    // input[3]: defaulting = 0, visible = 1, type = 8, value = [0 1 0]
+    // page group: IsoSurface
+    //
+main_ClipPlane_6_out_1 = 
+    ClipPlane(
+    main_Color_13_out_1,
+    main_ClipPlane_6_in_2,
+    main_ClipPlane_6_in_3
+    ) [instance: 6, cache: 1];
+    // 
+    // node Light[1]: x = 58, y = 214, inputs = 3, label = Light
+    // input[1]: defaulting = 0, visible = 1, type = 8, value = [0 0.1 0.5]
+    // input[2]: defaulting = 0, visible = 1, type = 8, value = NULL
+    // input[3]: defaulting = 0, visible = 1, type = 3, value = 1
+    // page group: Rendering
+    //
+main_Light_1_out_1 = 
+    Light(
+    main_Light_1_in_1,
+    main_Light_1_in_2,
+    main_Light_1_in_3
+    ) [instance: 1, cache: 1];
+    // 
+    // node Collect[7]: x = 205, y = 414, inputs = 3, label = Collect
+    // page group: IsoSurface
+    //
+main_Collect_7_out_1 = 
+    Collect(
+    main_ClipPlane_2_out_1,
+    main_ClipPlane_5_out_1,
+    main_ClipPlane_6_out_1
+    ) [instance: 7, cache: 1];
+    // 
+    // node Transmitter[18]: x = 204, y = 514, inputs = 1, label = IsoSurface
+    // page group: IsoSurface
+    //
+IsoSurface = main_Collect_7_out_1;
+    // 
+    // node Receiver[27]: x = 57, y = 114, inputs = 1, label = IsoSurface
+    // page group: Rendering
+    //
+main_Receiver_27_out_1[cache: 0] = IsoSurface;
+    // 
+    // node Color[3]: x = 358, y = 114, inputs = 5, label = Color
+    // input[2]: defaulting = 0, visible = 1, type = 32, value = "Gray40"
+    // page group: Rendering
+    //
+main_Color_3_out_1 = 
+    Color(
+    main_Caption_3_out_1,
+    main_Color_3_in_2,
+    main_Color_3_in_3,
+    main_Color_3_in_4,
+    main_Color_3_in_5
+    ) [instance: 3, cache: 1];
+    // 
+    // node Switch[2]: x = 368, y = 214, inputs = 2, label = Switch
+    // page group: Rendering
+    //
+main_Switch_2_out_1 = 
+    Switch(
+    main_Switch_2_in_1,
+    main_Color_3_out_1
+    ) [instance: 2, cache: 1];
+    // 
+    // node Toggle[2]: x = 420, y = 0, inputs = 6, label = Toggle
+    // input[1]: defaulting = 0, visible = 0, type = 32, value = "Toggle_2"
+    // input[2]: defaulting = 0, visible = 0, type = 29, value = 1
+    // input[3]: defaulting = 0, visible = 0, type = 3, value = 1
+    // input[4]: defaulting = 1, visible = 1, type = 29, value = 1
+    // input[5]: defaulting = 1, visible = 1, type = 29, value = 0
+    // output[1]: visible = 1, type = 29, value = 1
+    // page group: General
+    // toggle : 1
+    //
+    // 
+    // node Transmitter[14]: x = 409, y = 114, inputs = 1, label = ShowDeco
+    // page group: General
+    //
+ShowDeco = main_Toggle_2_out_1;
+    // 
+    // node Receiver[24]: x = 707, y = 14, inputs = 1, label = ShowDeco
+    // page group: Rendering
+    //
+main_Receiver_24_out_1[cache: 0] = ShowDeco;
+    // 
+    // node Switch[3]: x = 468, y = 214, inputs = 2, label = Switch
+    // page group: Rendering
+    //
+main_Switch_3_out_1 = 
+    Switch(
+    main_Receiver_24_out_1,
+    main_Caption_4_out_1
+    ) [instance: 3, cache: 1];
+    // 
+    // node Toggle[3]: x = 420, y = 201, inputs = 6, label = Toggle
+    // input[1]: defaulting = 0, visible = 0, type = 32, value = "Toggle_3"
+    // input[2]: defaulting = 0, visible = 0, type = 29, value = 1
+    // input[3]: defaulting = 0, visible = 0, type = 3, value = 1
+    // input[4]: defaulting = 1, visible = 1, type = 29, value = 1
+    // input[5]: defaulting = 1, visible = 1, type = 29, value = 0
+    // output[1]: visible = 1, type = 29, value = 1
+    // page group: General
+    // toggle : 1
+    //
+    // 
+    // node Transmitter[15]: x = 397, y = 293, inputs = 1, label = ShowColorBar
+    // page group: General
+    //
+ShowColorBar = main_Toggle_3_out_1;
+    // 
+    // node Receiver[25]: x = 695, y = 114, inputs = 1, label = ShowColorBar
+    // page group: Rendering
+    //
+main_Receiver_25_out_1[cache: 0] = ShowColorBar;
+    // 
+    // node Transmitter[11]: x = 141, y = 269, inputs = 1, label = ColormapRGB
+    // page group: ScanPlane
+    //
+ColormapRGB = main_Colormap_3_out_1;
+    // 
+    // node Receiver[20]: x = 545, y = 14, inputs = 1, label = ColormapRGB
+    // page group: Rendering
+    //
+main_Receiver_20_out_1[cache: 0] = ColormapRGB;
+    // 
+    // node ColorBar[1]: x = 534, y = 114, inputs = 16, label = ColorBar
+    // input[2]: defaulting = 0, visible = 1, type = 8, value = [0.98 0.98]
+    // input[3]: defaulting = 0, visible = 1, type = 8, value = [170 18]
+    // input[4]: defaulting = 0, visible = 1, type = 3, value = 0
+    // input[6]: defaulting = 0, visible = 0, type = 5, value = 0.0
+    // input[7]: defaulting = 0, visible = 0, type = 5, value = 1.2
+    // input[8]: defaulting = 0, visible = 1, type = 32, value = ""
+    // input[11]: defaulting = 0, visible = 0, type = 5, value = 1.2
+    // input[13]: defaulting = 0, visible = 0, type = 16777221, value = { 0.25 0.5 0.75 1.0 }
+    // input[14]: defaulting = 1, visible = 0, type = 16777248, value = {"{0  0.25 0.5 0.75 1.0 }"}
+    // input[15]: defaulting = 0, visible = 0, type = 3, value = 1
+    // input[16]: defaulting = 0, visible = 0, type = 1, value = 12
+    // page group: Rendering
+    //
+main_ColorBar_1_out_1 = 
+    ColorBar(
+    main_Receiver_20_out_1,
+    main_ColorBar_1_in_2,
+    main_ColorBar_1_in_3,
+    main_ColorBar_1_in_4,
+    main_ColorBar_1_in_5,
+    main_ColorBar_1_in_6,
+    main_ColorBar_1_in_7,
+    main_ColorBar_1_in_8,
+    main_ColorBar_1_in_9,
+    main_ColorBar_1_in_10,
+    main_ColorBar_1_in_11,
+    main_ColorBar_1_in_12,
+    main_ColorBar_1_in_13,
+    main_ColorBar_1_in_14,
+    main_ColorBar_1_in_15,
+    main_ColorBar_1_in_16
+    ) [instance: 1, cache: 1];
+    // 
+    // node Switch[4]: x = 568, y = 214, inputs = 2, label = Switch
+    // page group: Rendering
+    //
+main_Switch_4_out_1 = 
+    Switch(
+    main_Receiver_25_out_1,
+    main_ColorBar_1_out_1
+    ) [instance: 4, cache: 1];
+    // 
+    // node Collect[4]: x = 210, y = 364, inputs = 8, label = Collect
+    // input[5]: visible = 0
+    // page group: Rendering
+    //
+main_Collect_4_out_1 = 
+    Collect(
+    main_AmbientLight_1_out_1,
+    main_Light_1_out_1,
+    main_Receiver_27_out_1,
+    main_AutoAxes_1_out_1,
+    main_Collect_4_in_5,
+    main_Switch_2_out_1,
+    main_Switch_3_out_1,
+    main_Switch_4_out_1
+    ) [instance: 4, cache: 1];
+    // 
+    // node Render[4]: x = 416, y = 364, inputs = 3, label = Render
+    // input[3]: defaulting = 1, visible = 0, type = 32, value = NULL
+    // page group: Rendering
+    //
+main_Render_4_out_1 = 
+    Render(
+    main_Collect_4_out_1,
+    main_Camera_1_out_1,
+    main_Render_4_in_3
+    ) [instance: 4, cache: 1];
+    // 
+    // node Display[1]: x = 515, y = 464, inputs = 4, label = Display
+    // page group: Rendering
+    // depth: value = 24
+    // window: position = (0.6453,0.4502), size = 0.3484x0.4648
+    //
+main_Display_1_out_1[cache: 2] = 
+    Display(
+    main_Render_4_out_1,
+    main_Display_1_in_2,
+    main_Display_1_in_3,
+    main_Display_1_in_4
+    ) [instance: 1, cache: 1];
+    // 
+    // node ScalarList[2]: x = 307, y = 0, inputs = 11, label = ScalarList
+    // input[1]: defaulting = 0, visible = 0, type = 32, value = "ScalarList_2"
+    // input[2]: visible = 0
+    // input[3]: defaulting = 0, visible = 0, type = 16777221, value = { 0.5 }
+    // input[4]: defaulting = 1, visible = 0, type = 3, value = 0
+    // input[5]: defaulting = 1, visible = 0, type = 5, value = -1000000.0
+    // input[6]: defaulting = 1, visible = 0, type = 5, value = 1000000.0
+    // input[7]: defaulting = 1, visible = 0, type = 5, value = 1.0
+    // input[9]: defaulting = 1, visible = 0, type = 1, value = 5
+    // output[1]: visible = 1, type = 16777221, value = { 0.5 }
+    // page group: General
+    //
+    // 
+    // node Transmitter[5]: x = 30, y = 188, inputs = 1, label = filename
+    // page group: General
+    //
+filename = main_FileSelector_1_out_1;
+    // 
+    // node Transmitter[10]: x = 312, y = 111, inputs = 1, label = IsoValue
+    // page group: General
+    //
+IsoValue = main_ScalarList_2_out_1;
+    // 
+    // node WriteImage[3]: x = 596, y = 464, inputs = 4, label = WriteImage
+    // input[2]: defaulting = 0, visible = 1, type = 32, value = dataimport
+    // input[3]: defaulting = 0, visible = 1, type = 32, value = plotformat
+    // page group: Rendering
+    //
+    WriteImage(
+    main_Render_4_out_1,
+    main_WriteImage_3_in_2,
+    main_WriteImage_3_in_3,
+    main_WriteImage_3_in_4
+    ) [instance: 3, cache: 1];
+// network: end of macro body
+}
+main_AmbientLight_1_in_1 = [0.15 0.15 0.15];
+main_AmbientLight_1_out_1 = NULL;
+main_FileSelector_1_out_1 = dataimport;
+main_FileSelector_1_out_2 = nucleusdens;
+main_String_1_out_1 = "dx";
+main_Import_1_in_2 = NULL;
+main_Import_1_in_4 = NULL;
+main_Import_1_in_5 = NULL;
+main_Import_1_in_6 = NULL;
+main_Import_1_out_1 = NULL;
+main_Transmitter_1_out_1 = NULL;
+main_Receiver_7_out_1 = NULL;
+main_MapToPlane_5_in_2 = [0 0 0];
+main_MapToPlane_5_in_3 = [0 0 1];
+main_MapToPlane_5_out_1 = NULL;
+main_Colormap_3_in_1 = { [0.03525641 0.83157895] [0.74038462 0.0] };
+main_Colormap_3_in_2 = { [0.073717949 0.0] [0.17307692 1.0] };
+main_Colormap_3_in_3 = { [0.10576923 0.0] [0.31089744 1.0] };
+main_Colormap_3_in_4 = { [0.092948718 0.02247191] [0.21794872 1.0] };
+main_Colormap_3_in_5 = "Colormap_3";
+main_Colormap_3_in_6 = NULL;
+main_Colormap_3_in_7 = NULL;
+main_Colormap_3_in_8 = NULL;
+main_Colormap_3_in_9 = NULL;
+main_Colormap_3_in_10 = NULL;
+main_Colormap_3_in_11 = NULL;
+main_Colormap_3_in_12 = { 0.0 1.4 };
+main_Colormap_3_in_13 = NULL;
+main_Colormap_3_in_14 = NULL;
+main_Colormap_3_in_15 = NULL;
+main_Colormap_3_in_16 = NULL;
+main_Colormap_3_in_17 = NULL;
+main_Colormap_3_in_18 = NULL;
+main_Colormap_3_in_19 = NULL;
+main_Colormap_3_out_1 = NULL;
+main_Colormap_3_out_2 = NULL;
+main_Color_6_in_4 = NULL;
+main_Color_6_in_5 = NULL;
+main_Color_6_out_1 = NULL;
+main_MapToPlane_6_in_2 = [0 0 0];
+main_MapToPlane_6_in_3 = [1 0 0];
+main_MapToPlane_6_out_1 = NULL;
+main_Color_10_in_4 = NULL;
+main_Color_10_in_5 = NULL;
+main_Color_10_out_1 = NULL;
+main_MapToPlane_7_in_2 = [0 0 0];
+main_MapToPlane_7_in_3 = [0 1 0];
+main_MapToPlane_7_out_1 = NULL;
+main_Color_12_in_4 = NULL;
+main_Color_12_in_5 = NULL;
+main_Color_12_out_1 = NULL;
+main_Collect_6_out_1 = NULL;
+main_ClipBox_1_in_2 = {[-0.01, -0.01, -0.01], [5, 5, 5]};
+main_ClipBox_1_out_1 = NULL;
+main_Transmitter_17_out_1 = NULL;
+main_Receiver_16_out_1 = NULL;
+main_Camera_1_in_1 = [0 0 -0.2];
+main_Camera_1_in_2 = [15 25 10];
+main_Camera_1_in_3 = NULL;
+main_Camera_1_in_4 = 432;
+main_Camera_1_in_5 = 1.0;
+main_Camera_1_in_6 = [1 0 0];
+main_Camera_1_in_7 = 1;
+main_Camera_1_in_8 = 20.5;
+main_Camera_1_in_9 = NULL;
+main_Camera_1_out_1 = NULL;
+main_AutoAxes_1_in_3 = NULL;
+main_AutoAxes_1_in_4 = 0;
+main_AutoAxes_1_in_5 = {[-4 -4 -4], [4 4 4]};
+main_AutoAxes_1_in_6 = 0;
+main_AutoAxes_1_in_7 = 0;
+main_AutoAxes_1_in_8 = NULL;
+main_AutoAxes_1_in_9 = 1;
+main_AutoAxes_1_in_10 = {"clear","Gray25","Gray35","black"};
+main_AutoAxes_1_in_11 = {"background","grid","ticks","labels"};
+main_AutoAxes_1_in_12 = NULL;
+main_AutoAxes_1_in_13 = NULL;
+main_AutoAxes_1_in_14 = { -5.0 -4.0 -3.0 -2.0 -1.0 0.0 1.0 2.0 3.0 4.0 5.0 };
+main_AutoAxes_1_in_15 = { -5.0 -4.0 -3.0 -2.0 -1.0 0.0 1.0 2.0 3.0 4.0 5.0 };
+main_AutoAxes_1_in_16 = { -5.0 -4.0 -3.0 -2.0 -1.0 0.0 1.0 2.0 3.0 4.0 5.0 };
+main_AutoAxes_1_in_17 = NULL;
+main_AutoAxes_1_in_18 = NULL;
+main_AutoAxes_1_in_19 = NULL;
+main_AutoAxes_1_out_1 = NULL;
+main_Caption_3_in_1 = "FMD-Group @ GSI, 2004 ";
+main_Caption_3_in_2 = [.99 .02];
+main_Caption_3_in_3 = NULL;
+main_Caption_3_in_4 = NULL;
+main_Caption_3_in_5 = NULL;
+main_Caption_3_in_6 = 12;
+main_Caption_3_in_7 = "roman_s";
+main_Caption_3_in_8 = [0 1];
+main_Caption_3_in_9 = NULL;
+main_Caption_3_out_1 = NULL;
+main_String_5_out_1 = nucleusname;
+main_Transmitter_12_out_1 = NULL;
+main_Receiver_22_out_1 = NULL;
+main_Caption_4_in_2 = [.03 .97];
+main_Caption_4_in_3 = NULL;
+main_Caption_4_in_4 = NULL;
+main_Caption_4_in_5 = NULL;
+main_Caption_4_in_6 = 30;
+main_Caption_4_in_7 = "roman_d";
+main_Caption_4_in_8 = NULL;
+main_Caption_4_in_9 = NULL;
+main_Caption_4_out_1 = NULL;
+main_Receiver_8_out_1 = NULL;
+main_ScalarList_1_in_1 = "ScalarList_1";
+main_ScalarList_1_in_2 = NULL;
+main_ScalarList_1_in_3 = { 0.5 };
+main_ScalarList_1_in_4 = NULL;
+main_ScalarList_1_in_5 = NULL;
+main_ScalarList_1_in_6 = NULL;
+main_ScalarList_1_in_7 = NULL;
+main_ScalarList_1_in_8 = NULL;
+main_ScalarList_1_in_9 = NULL;
+main_ScalarList_1_in_10 = NULL;
+main_ScalarList_1_in_11 = NULL;
+main_ScalarList_1_out_1 = { 0.5 };
+main_Isosurface_1_in_3 = NULL;
+main_Isosurface_1_in_4 = NULL;
+main_Isosurface_1_in_5 = NULL;
+main_Isosurface_1_in_6 = NULL;
+main_Isosurface_1_out_1 = NULL;
+main_Color_1_in_2 = "white";
+main_Color_1_in_3 = 1.0;
+main_Color_1_in_4 = NULL;
+main_Color_1_in_5 = NULL;
+main_Color_1_out_1 = NULL;
+main_ClipPlane_2_in_2 = [-0.1 0 0];
+main_ClipPlane_2_in_3 = [1 0 0];
+main_ClipPlane_2_out_1 = NULL;
+main_Isosurface_3_in_3 = NULL;
+main_Isosurface_3_in_4 = NULL;
+main_Isosurface_3_in_5 = NULL;
+main_Isosurface_3_in_6 = NULL;
+main_Isosurface_3_out_1 = NULL;
+main_Color_11_in_2 = "white";
+main_Color_11_in_3 = 1.0;
+main_Color_11_in_4 = NULL;
+main_Color_11_in_5 = NULL;
+main_Color_11_out_1 = NULL;
+main_ClipPlane_5_in_2 = [0 0 -0.1];
+main_ClipPlane_5_in_3 = [0 0 1];
+main_ClipPlane_5_out_1 = NULL;
+main_Isosurface_4_in_3 = NULL;
+main_Isosurface_4_in_4 = NULL;
+main_Isosurface_4_in_5 = NULL;
+main_Isosurface_4_in_6 = NULL;
+main_Isosurface_4_out_1 = NULL;
+main_Color_13_in_2 = "white";
+main_Color_13_in_3 = 1.0;
+main_Color_13_in_4 = NULL;
+main_Color_13_in_5 = NULL;
+main_Color_13_out_1 = NULL;
+main_ClipPlane_6_in_2 = [0 -0.1 0];
+main_ClipPlane_6_in_3 = [0 1 0];
+main_ClipPlane_6_out_1 = NULL;
+main_Light_1_in_1 = [0 0.1 0.5];
+main_Light_1_in_2 = NULL;
+main_Light_1_in_3 = 1;
+main_Light_1_out_1 = NULL;
+main_Collect_7_out_1 = NULL;
+main_Transmitter_18_out_1 = NULL;
+main_Receiver_27_out_1 = NULL;
+main_Color_3_in_2 = "Gray40";
+main_Color_3_in_3 = NULL;
+main_Color_3_in_4 = NULL;
+main_Color_3_in_5 = NULL;
+main_Color_3_out_1 = NULL;
+main_Switch_2_in_1 = NULL;
+main_Switch_2_out_1 = NULL;
+main_Toggle_2_in_1 = "Toggle_2";
+main_Toggle_2_in_2 = 1;
+main_Toggle_2_in_3 = 1;
+main_Toggle_2_in_4 = NULL;
+main_Toggle_2_in_5 = NULL;
+main_Toggle_2_in_6 = NULL;
+main_Toggle_2_out_1 = 1;
+main_Transmitter_14_out_1 = NULL;
+main_Receiver_24_out_1 = NULL;
+main_Switch_3_out_1 = NULL;
+main_Toggle_3_in_1 = "Toggle_3";
+main_Toggle_3_in_2 = 1;
+main_Toggle_3_in_3 = 1;
+main_Toggle_3_in_4 = NULL;
+main_Toggle_3_in_5 = NULL;
+main_Toggle_3_in_6 = NULL;
+main_Toggle_3_out_1 = 1;
+main_Transmitter_15_out_1 = NULL;
+main_Receiver_25_out_1 = NULL;
+main_Transmitter_11_out_1 = NULL;
+main_Receiver_20_out_1 = NULL;
+main_ColorBar_1_in_2 = [0.98 0.98];
+main_ColorBar_1_in_3 = [170 18];
+main_ColorBar_1_in_4 = 0;
+main_ColorBar_1_in_5 = NULL;
+main_ColorBar_1_in_6 = 0.0;
+main_ColorBar_1_in_7 = 1.2;
+main_ColorBar_1_in_8 = "";
+main_ColorBar_1_in_9 = NULL;
+main_ColorBar_1_in_10 = NULL;
+main_ColorBar_1_in_11 = 1.2;
+main_ColorBar_1_in_12 = NULL;
+main_ColorBar_1_in_13 = { 0.25 0.5 0.75 1.0 };
+main_ColorBar_1_in_14 = NULL;
+main_ColorBar_1_in_15 = 1;
+main_ColorBar_1_in_16 = 12;
+main_ColorBar_1_out_1 = NULL;
+main_Switch_4_out_1 = NULL;
+main_Collect_4_in_5 = NULL;
+main_Collect_4_out_1 = NULL;
+main_Render_4_in_3 = NULL;
+main_Render_4_out_1 = NULL;
+main_Display_1_in_2 = NULL;
+main_Display_1_in_3 = "X24,,";
+main_Display_1_in_4 = NULL;
+main_ScalarList_2_in_1 = "ScalarList_2";
+main_ScalarList_2_in_2 = NULL;
+main_ScalarList_2_in_3 = { 0.5 };
+main_ScalarList_2_in_4 = NULL;
+main_ScalarList_2_in_5 = NULL;
+main_ScalarList_2_in_6 = NULL;
+main_ScalarList_2_in_7 = NULL;
+main_ScalarList_2_in_8 = NULL;
+main_ScalarList_2_in_9 = NULL;
+main_ScalarList_2_in_10 = NULL;
+main_ScalarList_2_in_11 = NULL;
+main_ScalarList_2_out_1 = { 0.5 };
+main_WriteImage_3_in_2 = dataimport;
+main_WriteImage_3_in_3 = plotformat;
+main_WriteImage_3_in_4 = NULL;
+Executive("product version 4 1 1");
+$sync
+main();

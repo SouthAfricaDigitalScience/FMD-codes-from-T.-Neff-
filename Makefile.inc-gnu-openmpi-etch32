@@ -1,0 +1,54 @@
+.PHONY: all doc clean veryclean install
+
+.SUFFIXES:
+.SUFFIXES: .c .f .o .mpi.o .a
+
+
+SHELL = /bin/sh
+ECHO = echo
+
+
+CC = gcc-4.1
+CLANGFLAGS = --std=gnu99 -Wall
+COPTFLAGS = -g -O2 -march=prescott -msse2 -mfpmath=sse -ffast-math
+CFLAGS = $(CLANGFLAGS) $(COPTFLAGS)
+
+FC = gfortran-4.1
+FLANGFLAGS = -Wall
+FOPTFLAGS = -g -O2 -march=prescott -msse2 -mfpmath=sse -ffast-math
+FFLAGS = $(FLANGFLAGS) $(FOPTFLAGS)
+
+LD = gcc-4.1
+LDFLAGS = -static -L.
+SYSLIBS = -lgfortran -lg2c -lm
+
+LAPACKLIBS = -L/usr/lib/atlas -llapack -lblas
+
+# compare with mpicc -showme:compile, mpicc -showme:link
+
+MPICC = gcc-4.1
+MPICFLAGS = -I/usr/the_local/OpenMPI-GNU-32/include -pthread $(CFLAGS)
+
+MPILD = gcc-4.1
+MPILDFLAGS = -static -L. -pthread -L/usr/the_local/OpenMPI-GNU-32/lib
+MPILIBS = -lmpi -lopen-rte -lopen-pal -ldl -Wl,--export-dynamic -lnsl -lutil -lm -ldl
+
+
+AR = ar
+
+INSTALL = install -m 750
+
+
+# implicit rules
+
+%.mpi.o: %.c
+	$(MPICC) -c -DMPI $(CPPFLAGS) $(MPICFLAGS) $< -o $@
+
+# automatic dependencies
+
+%.d: %.c
+	$(SHELL) -ec '$(CC) -MM $(CFLAGS) $< \
+		| sed '\''s/\($*\)\.o[ :]*/\1.o $@ : /g'\'' > $@; \
+		[ -s $@ ] || rm -f $@'
+
+

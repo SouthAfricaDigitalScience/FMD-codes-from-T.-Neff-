@@ -1,0 +1,151 @@
+/**
+
+  \fime Energies.c
+
+   This calculates the expectation value of the Hamiltonian for nuclear states as calculated in multiconfiguration. Application for calculating mirror energies.
+
+   (c) 2015 K Henninger
+
+*/
+
+#include <math.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <complex.h>
+#include <ncurses/ncurses.h>
+
+#include "SlaterDet.h"
+#include "Projection.h"
+#include "Symmetry.h"
+#include "Interaction.h"
+#include "KineticEnergy.h"
+#include "CenterofMass.h"
+#include "Potential.h"
+#include "Hamiltonian.h"
+#include "Observables.h"
+#include "ProjectedObservables.h"
+
+
+#include "misc/utils.h"
+#include "misc/physics.h"
+
+// #include <conio.h>
+
+
+
+/** This part acts with the Hamiltonian on each configuration Q in the order given in the ".fmd" file and stores the values. "*/
+
+{
+
+char* mbfile[MAXSTATES];
+int n;
+
+  if (readstringsfromfile(nucsfile, &n, mbfile))
+    cleanup(-1);
+
+  SlaterDet Q[n];
+  Symmetry S[n];
+
+  int i;
+  for (i=0; i<n; i++) {
+    extractSymmetryfromString(&mbfile[i], &S[i]);
+    if (readSlaterDetfromFile(&Q[i], mbfile[i]))
+      cleanup(-1);
+                      }
+
+
+
+  //Calculate expectation value of the Hamiltonian and store values in array A:
+
+void calcHamiltonian(const Interaction *Int,
+		     const SlaterDet* Q, const SlaterDetAux* X,
+		     double* h)
+    {
+  double v[Int->n];
+  double t, tcm = 0.0;
+
+ char A[n];
+
+ for (i=0; i<n; i++) {
+
+ calcT(Q, X, &t);
+  if (Int->cm)
+    calcTCM(Q, X, &tcm);
+  calcPotential(Int, Q, X, v);
+
+  *h = t - tcm + v[0];
+
+   A[i] = h;
+
+                      }
+
+     }
+
+
+
+
+/** This part reads in the arrays of coefficients from the ".states" file and stores them in array number B. Here we have to read in coefficients from the first eigenvector in each eigenstate. */
+FILE *ifp;
+
+
+ifp = fopen(mbfile[i], mode);
+
+if (ifp == NULL) {
+  fprintf(stderr, "Can't open input file!\n");
+  exit(1);
+                  }
+
+char coeff[j];
+char B[1000];
+
+...
+
+while (fscanf(ifp, "%s %d", coeff) != EOF){
+
+                 for( int j=0; j < 1000; j++){
+
+                  B[j] = coeff;
+
+                                              }
+
+                                            }
+
+fclose(ifp);
+
+
+/** This part reads the stored Hamiltonian values and the stored coefficients and multiplies one with the other in order. The results are stored in array C. */
+
+int **C;
+    int k;
+
+    C = malloc(sizeof(int *) * nr1);
+
+    for (i = 0; i < nr1; i++){
+        C[i] = malloc(sizeof(int) * nc2);
+
+        for (k = 0; k < nc2; k++){
+            C[i][k] = 0;
+
+           for (j = 0; j < nc1; j++){
+                C[i][k] += (A[i]) * (B[j]);
+                                    }
+                                 }
+                               }
+
+    return C;
+
+
+/** This part reads the weighted Hamiltonian values from above, and sums them up. It outputs the results.*/
+
+int sum_array(C, int num_elements);
+void print_array(C, int num_elements);
+
+   {int sum;
+
+   sum = sum_array;
+   printf("The sum is %d\n", sum);
+    }
+
+}

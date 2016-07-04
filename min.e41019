@@ -1,0 +1,63 @@
+... [ 0] tplx96
+... [ 1] tplx96
+... [ 2] tplx96
+... [ 5] tplx96
+... [ 6] tplx96
+... [ 7] tplx96
+... [14] tplx96
+... [16] tplx96
+... [17] tplx96
+... [19] tplx96
+... [18] tplx96
+... [11] tplx96
+... [15] tplx96
+... reading Interaction from file AV18-UsrgD2000f-v11ls-2.0.int
+... [12] tplx96
+... [ 4] tplx96
+... [ 8] tplx96
+... [ 3] tplx96
+... [13] tplx96
+... [10] tplx96
+... [ 9] tplx96
+... reading Parameters from file B8.fmd
+... Ozzz:  0.02491
+... Ozzz:  0.02491
+... (alpha, beta, gamma) = (96.16, -0.00, 263.84)
+... n: 0.1203489, J2:  6.000
+# constraining   CM to    0.000
+# constraining cdetEQ to   30.000
+
+initial:	E =  -22.995 MeV,   Eintr =  -16.579 MeV
+
+			me     CM =    0.151
+			grad   CM =    0.302
+			me   cdetEQ =   21.219
+			grad cdetEQ =   21.219
+... Ozzz: -1.87114
+... angles inverted
+... (alpha, beta, gamma) = (174.22,  0.62,  5.93)
+... n: 0.0623386, J2:  6.000
+			me      E =  -22.065 MeV,   Eintr =  -13.214 MeV
+... Ozzz: -1.87114
+... angles inverted
+... (alpha, beta, gamma) = (174.22,  0.62,  5.93)
+grad   1: 	E =  -22.065 MeV,   Eintr =  -13.214 MeV
+			me     CM =    0.122
+			me   cdetEQ =   31.258
+			me     CM =    0.129
+			me   cdetEQ =   29.679
+... Ozzz: -1.97510
+... angles inverted
+... (alpha, beta, gamma) = (158.85,  0.60, 21.96)
+... n: 0.1676974, J2:  6.000
+			me      E =  -22.832 MeV,   Eintr =  -12.938 MeV
+			me     CM =    1.229
+			me   cdetEQ =   35.573
+... Ozzz: -1.12356
+... angles inverted
+... (alpha, beta, gamma) = (152.63,  0.63, 26.71)
+... n: 0.1595561, J2:  6.000
+			me      E =  -22.032 MeV,   Eintr =  -11.559 MeV
+... Ozzz: -1.97510
+... angles inverted
+... (alpha, beta, gamma) = (158.85,  0.60, 21.96)

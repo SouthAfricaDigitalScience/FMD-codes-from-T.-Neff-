@@ -1,0 +1,229 @@
+/**
+
+  \file ConstraintJ2.c
+
+  Constrain expectation value of J2
+
+
+  (c) 2003 Thomas Neff
+
+*/
+
+#include <math.h>
+#include <complex.h>
+
+#include "Gaussian.h"
+#include "gradGaussian.h"
+#include "SlaterDet.h"
+#include "gradSlaterDet.h"
+
+#include "Constraint.h"
+#include "ConstraintJ2.h"
+
+#include "numerics/cmath.h"
+
+
+Constraint ConstraintJ2 = {
+  val : 0.0,
+  label : "J2",
+  me : calcConstraintJ2,
+  gradme : calcgradConstraintJ2,
+  output : outputConstraintJ2
+};
+
+
+// matrix elements identical as in AngularMomentum.c
+// J2 is calculated relativ to the origin 
+// should really be calculate relativ to center of mass 
+
+static void ob_j2(void* par,
+		  const Gaussian* G1, const Gaussian* G2, 
+		  const GaussianAux* X, complex double* j2)
+{
+  complex double l2, s2, ls;
+
+  l2 = (2*X->lambda*
+	(conj(G1->b[0])*G2->b[0]+conj(G1->b[1])*G2->b[1]+conj(G1->b[2])*G2->b[2])
+	+ X->rho2*X->pi2 - csqr(X->rhopi))*X->Q;
+  s2 = 0.75*X->Q;
+  ls = 0.5*cvec3mult(X->rhoxpi, X->sig)* X->T* X->R;
+  
+  *j2 += l2 + s2 + 2*ls;
+}
+
+
+static void tb_j2(void* par,
+		  const Gaussian* G1, const Gaussian* G2, 
+		  const Gaussian* G3, const Gaussian* G4, 
+		  const GaussianAux* X13, const GaussianAux* X24, 
+		  complex double* j2)
+{	
+  complex double l2, s2, ls;
+
+  l2 = cvec3mult(X13->rhoxpi, X24->rhoxpi)* X13->Q* X24->Q;
+  s2 = 0.25*cvec3mult(X13->sig, X24->sig)* X13->T* X24->T* X13->R* X24->R;
+  ls = 0.25*(cvec3mult(X13->rhoxpi, X24->sig)*X13->S+
+	     cvec3mult(X13->sig, X24->rhoxpi)*X24->S)*
+       X13->T* X24->T* X13->R* X24->R;
+
+  *j2 += 2*(l2 + s2 + 2*ls);
+}
+
+
+static void gob_j2(void* par,
+		   const Gaussian* G1, const Gaussian* G2, 
+		   const GaussianAux* X, const gradGaussianAux* dX,
+		   complex double* j2, gradGaussian* dj2)
+{
+  int i;
+  complex double bcb, l2m, s2m, lsm;
+  gradScalar dl2m, drhopi;
+  gradGaussian dlsm;
+
+  bcb = (conj(G1->b[0])*G2->b[0]+conj(G1->b[1])*G2->b[1]+conj(G1->b[2])*G2->b[2]);
+
+  l2m = (2*X->lambda*bcb + X->rho2*X->pi2 - csqr(X->rhopi));
+  s2m = 0.75*X->S;
+  lsm = 0.5*cvec3mult(X->rhoxpi, X->sig);
+  
+  *j2 += X->T*(l2m*X->S + 2*lsm + s2m)*X->R;
+
+  drhopi.a = cvec3mult(dX->drho.a, X->pi) + cvec3mult(X->rho, dX->dpi.a);
+  for (i=0; i<3; i++)
+    drhopi.b[i] = dX->drho.b*X->pi[i] + X->rho[i]*dX->dpi.b;
+
+  dl2m.a = 2*dX->dlambda*bcb + dX->drho2.a*X->pi2 + X->rho2*dX->dpi2.a -
+    2*X->rhopi*drhopi.a;
+  for (i=0; i<3; i++)
+    dl2m.b[i] = 2*X->lambda*G2->b[i] + 
+      dX->drho2.b[i]*X->pi2 + X->rho2*dX->dpi2.b[i] - 2*X->rhopi*drhopi.b[i];
+    
+  for (i=0; i<2; i++)
+    dlsm.chi[i] = 0.5*cvec3mult(X->rhoxpi, dX->dsig.chi[i]);
+  dlsm.a = 0.5*(cvec3spat(dX->drho.a, X->pi, X->sig)+
+		cvec3spat(X->rho, dX->dpi.a, X->sig));
+  dlsm.b[0] = 0.5*((dX->drho.b*X->pi[1]-X->rho[1]*dX->dpi.b)*X->sig[2] - 
+		   (dX->drho.b*X->pi[2]-X->rho[2]*dX->dpi.b)*X->sig[1]);
+  dlsm.b[1] = 0.5*((dX->drho.b*X->pi[2]-X->rho[2]*dX->dpi.b)*X->sig[0] - 
+		   (dX->drho.b*X->pi[0]-X->rho[0]*dX->dpi.b)*X->sig[2]);
+  dlsm.b[2] = 0.5*((dX->drho.b*X->pi[0]-X->rho[0]*dX->dpi.b)*X->sig[1] - 
+		   (dX->drho.b*X->pi[1]-X->rho[1]*dX->dpi.b)*X->sig[0]);
+
+  for (i=0; i<2; i++)
+    dj2->chi[i] += X->T* (l2m*dX->dS.chi[i]+2*dlsm.chi[i]+0.75*dX->dS.chi[i])* X->R;
+
+  dj2->a += X->T* (dl2m.a* X->S*X->R +
+		   2*dlsm.a* X->R +
+		   (l2m*X->S + 2*lsm + s2m)*dX->dR.a);
+
+  for (i=0; i<3; i++)
+    dj2->b[i] += X->T* (dl2m.b[i]* X->S*X->R +
+			2*dlsm.b[i]* X->R +
+			(l2m*X->S + 2*lsm + s2m)*dX->dR.b[i]);
+}
+
+
+static void gtb_j2(void* par,
+		   const Gaussian* G1, const Gaussian* G2, 
+		   const Gaussian* G3, const Gaussian* G4, 
+		   const GaussianAux* X13, const GaussianAux* X24,
+		   const gradGaussianAux* dX13,
+		   complex double* j2, gradGaussian* dj2)
+{	
+  complex double l2m, s2m, lsm;
+  gradScalar dl2m;
+  gradGaussian dlsm;
+  int i;
+
+  l2m = cvec3mult(X13->rhoxpi, X24->rhoxpi);
+  s2m = 0.25*cvec3mult(X13->sig, X24->sig);
+  lsm = 0.25*(cvec3mult(X13->rhoxpi, X24->sig)*X13->S+
+	      cvec3mult(X13->sig, X24->rhoxpi)*X24->S);
+  
+  *j2 += 2* X13->T*X24->T* (l2m*X13->S*X24->S + 2*lsm + s2m) *X13->R*X24->R;
+  
+  dl2m.a = 
+    cvec3mult(dX13->drho.a, X24->rho)*cvec3mult(X13->pi, X24->pi) +
+    cvec3mult(X13->rho, X24->rho)*cvec3mult(dX13->dpi.a, X24->pi) -
+    cvec3mult(dX13->drho.a, X24->pi)*cvec3mult(X13->pi, X24->rho) -
+    cvec3mult(X13->rho, X24->pi)*cvec3mult(dX13->dpi.a, X24->rho);
+  for (i=0; i<3; i++)
+    dl2m.b[i] =
+      dX13->drho.b*X24->rho[i]*cvec3mult(X13->pi, X24->pi) +
+      cvec3mult(X13->rho, X24->rho)*dX13->dpi.b*X24->pi[i] -
+      dX13->drho.b*X24->pi[i]*cvec3mult(X13->pi, X24->rho) -
+      cvec3mult(X13->rho, X24->pi)*dX13->dpi.b*X24->rho[i];
+      
+  for (i=0; i<2; i++)
+    dlsm.chi[i] = 0.25*( 
+      cvec3mult(X13->rhoxpi, X24->sig)*dX13->dS.chi[i]+
+      cvec3mult(dX13->dsig.chi[i], X24->rhoxpi)*X24->S);
+  dlsm.a =
+    0.25*cvec3spat(dX13->drho.a, X13->pi, X24->sig)*X13->S+
+    0.25*cvec3spat(X13->rho, dX13->dpi.a, X24->sig)*X13->S;
+
+  dlsm.b[0] = 0.25*((dX13->drho.b*X13->pi[1]-X13->rho[1]*dX13->dpi.b)*
+		    X13->S* X24->sig[2] - 
+		    (dX13->drho.b*X13->pi[2]-X13->rho[2]*dX13->dpi.b)*
+		    X13->S* X24->sig[1]);
+  dlsm.b[1] = 0.25*((dX13->drho.b*X13->pi[2]-X13->rho[2]*dX13->dpi.b)*
+		    X13->S* X24->sig[0] - 
+		    (dX13->drho.b*X13->pi[0]-X13->rho[0]*dX13->dpi.b)*
+		    X13->S* X24->sig[2]);
+  dlsm.b[2] = 0.25*((dX13->drho.b*X13->pi[0]-X13->rho[0]*dX13->dpi.b)*
+		    X13->S* X24->sig[1] - 
+		    (dX13->drho.b*X13->pi[1]-X13->rho[1]*dX13->dpi.b)*
+		    X13->S* X24->sig[0]);    
+  
+  for (i=0; i<2; i++)
+    dj2->chi[i] += 2* X13->T*X24->T*
+      (l2m*dX13->dS.chi[i]*X24->S +
+       2*dlsm.chi[i] +
+       0.25*cvec3mult(dX13->dsig.chi[i], X24->sig))* X13->R* X24->R;
+
+  dj2->a += 2* X13->T*X24->T*
+    (dl2m.a* X13->S*X24->S* X13->R*X24->R +
+     2*dlsm.a* X13->R*X24->R +
+     (l2m*X13->S*X24->S + 2*lsm + s2m)*dX13->dR.a*X24->R);
+
+  for (i=0; i<3; i++)
+    dj2->b[i] += 2* X13->T*X24->T*
+      (dl2m.b[i]* X13->S*X24->S* X13->R*X24->R +
+       2*dlsm.b[i]* X13->R*X24->R +
+       (l2m*X13->S*X24->S + 2*lsm + s2m)*dX13->dR.b[i]*X24->R);  
+}
+
+
+void calcConstraintJ2(const SlaterDet* Q, const SlaterDetAux* X, 
+		      double* j2)
+{
+  double j2one, j2two;
+  OneBodyOperator op_ob_j2 = {dim: 1, opt: 1, par: NULL, me: ob_j2};
+  TwoBodyOperator op_tb_j2 = {dim: 1, opt: 1, par: NULL, me: tb_j2};
+
+
+  calcSlaterDetOBME(Q, X, &op_ob_j2, &j2one);
+  calcSlaterDetTBME(Q, X, &op_tb_j2, &j2two);
+
+  *j2 = j2one + j2two;
+}
+
+
+
+void calcgradConstraintJ2(const SlaterDet* Q, const SlaterDetAux* X, 
+			  const gradSlaterDetAux* dX,
+			  gradSlaterDet* dj2)
+{
+  gradOneBodyOperator gop_ob_j2 = {opt: 1, par: NULL, me: gob_j2};
+  gradTwoBodyOperator gop_tb_j2 = {opt: 1, par: NULL, me: gtb_j2};
+
+
+  calcgradSlaterDetOBME(Q, X, dX, &gop_ob_j2, dj2);
+  calcgradSlaterDetTBME(Q, X, dX, &gop_tb_j2, dj2);
+}
+
+
+double outputConstraintJ2(double val)
+{
+  return (val);
+}

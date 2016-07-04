@@ -1,0 +1,1648 @@
+commit 5526fd82f99493954bca98320a959b3557909f46
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Nov 30 14:23:47 2012 +0100
+
+    Fix creation of git_version.c in Makefile.
+
+commit c45e8ca5f2ab73163682bc79cbde89c469c13efd
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Nov 30 13:33:26 2012 +0100
+
+    Fix bug in creation of git_version.c. Add Makefile.inc for Ubuntu quantal.
+
+commit eb4cf7f94d7212c3b6bf50478becb17069b56550
+Merge: 0e2a71b 1481bbf
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Nov 30 12:35:58 2012 +0100
+
+    Merge branch 'master' of ssh://tplx80.gsi.de/~/var/git-repo-code/fmd
+    
+    Conflicts:
+    	Makefile
+
+commit 0e2a71b65e38a5779a50bc34c1f55031efca52f6
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Nov 30 12:05:55 2012 +0100
+
+    Added .gitignore target to Makefile.
+
+commit 1481bbf713fd8c181aa66ed7af18dee10f8e3955
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Nov 30 12:05:55 2012 +0100
+
+    Added .gitignore target to Makefile.
+
+commit 328f5ce473761de31e16f064fffae388e2a41110
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Nov 30 11:07:01 2012 +0100
+
+    Migration to GIT rcs.
+
+commit 8b48437efd355ca83e468ea5cfc79f5064131c72
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Oct 12 04:08:18 2012 +0000
+
+    calcsdradii: calculate radii without center-of-mass corrections
+
+commit bcdf9f1f17eec61be2003eceea01ef49185ae017
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Mon Jul 23 11:56:39 2012 +0000
+
+    Make output easier to parse.
+
+commit 2f3ffcca27536e7851ae760beeb81271537c2754
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Sun Jun 10 13:56:41 2012 +0000
+
+    Include Omega in shelloccupations output.
+
+commit 8ce4880bd8d0fa79b882c273a5eff9931ec4c397
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue May 22 08:45:26 2012 +0000
+
+    Remove debugging output.
+
+commit e4a22f49332ed72b2a92b429e71a02a2a1a4e9cd
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue May 22 08:43:55 2012 +0000
+
+    Bug in MAX macro ...
+
+commit 99bd677f04ddd0c95e028dd29f49864d8051bea5
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue May 22 07:40:01 2012 +0000
+
+    Two-body densities in momentum space decomposed into partial waves.
+
+commit 732e23dd24d7721e12fb44aade61923e0eb28c6d
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Sat May 19 07:34:08 2012 +0000
+
+    Added calctwobodydensitiescoordlme.
+
+commit 2faf6f47a1f489f52d3cd5a3adba87a47194a96e
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Sat May 19 07:27:00 2012 +0000
+
+    calctwobodydensitiescoordl calculates two-body densities in different channels.
+
+commit 10f140b52ca43f85b9a1f74870c6958e56cc6dfe
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu May 3 11:33:20 2012 +0000
+
+    Changed output format for two-nucleon ovlaps.
+
+commit 91339acea068c5cdc708d105d7039746f1784325
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Mon Apr 30 15:53:27 2012 +0000
+
+    Bug fix in Y-coordinates, wrong mass was used.
+
+commit af4897f8a95654976d3a684fab6446b7836f25d0
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Mon Apr 30 15:27:01 2012 +0000
+
+    Bug fixes for C coordinates, include jacobian in spectroscopic factor calculation.
+
+commit d3d5289cb59493d220b8f83ae7caac4f2f396fd7
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Sun Apr 29 14:38:22 2012 +0000
+
+    Added calctwobodydensitiescoordme.
+
+commit 6e96ee008b70cf5d82460aface9616edbbd23328
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Sun Apr 29 09:18:04 2012 +0000
+
+    Two-nucleon overlaps in C-coordinates.
+
+commit 20d7207a7fd251c5e5211e4e14cc0c9c04011fb3
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Mon Apr 23 19:54:45 2012 +0000
+
+    Fix _estimateangkappa for case of changing nucleon number.
+
+commit b47a6128d453b2afc3df980fdd5f904be327fbc3
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Sun Apr 22 08:32:51 2012 +0000
+
+    Fix a bug in Y-coordinates.
+
+commit 0a6e1d466a05969660d4b0b975174114088149e6
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Sat Apr 21 11:05:37 2012 +0000
+
+    Bug fixes for Y-coordinates.
+
+commit 2530e3492845cb1d63bec150722941ed3aa19f62
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Apr 20 20:02:25 2012 +0000
+
+    OpenMPI with Infiband does not allow fork/popen. Use zlib routines instead
+    of popen/gzip.
+
+commit 0b56f9b045e51735bf0a9b30822cf239be83ea81
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Apr 20 14:25:52 2012 +0000
+
+    One-nucleon ovlaps.
+
+commit c79b58d7d7a0e6a61f34e433e864f76e08117944
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Apr 20 14:21:57 2012 +0000
+
+    One-nucleon ovlaps.
+
+commit f1962cc1a04ac65140ece4b63078f7b7ad727ac1
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Apr 20 14:17:20 2012 +0000
+
+    Two-nucleon overlaps in T- and Y-coordinates.
+
+commit 55a71a279006615db721fe9b522d9ffdf85997f1
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Sun Apr 15 09:02:12 2012 +0000
+
+    Calculate Two-Nucleon Ovlaps.
+    MPI version for calcprojectedMBMEs.
+
+commit d969647721dac8de48cb2222819630ae50ad4ffa
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Sun Jan 29 09:38:15 2012 +0000
+
+    Cosmetic: Do no print mpirank, hostname.
+
+commit fe23bb271606c050be69a444285161105afb190e
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Nov 29 10:10:03 2011 +0000
+
+    Call dx with '--processors 1' option to work around SMP bug in DataExplorer.
+
+commit 7c0dd96795e6ee81f61cd18e5e3803fa7be5d78a
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Nov 15 16:45:21 2011 +0000
+
+    Allow for scaling of matrix elements.
+
+commit 1c8498a10eb12cebe0610c7cd8bf6f5272ddfc35
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Oct 4 05:44:48 2011 +0000
+
+    Increase number of eigenstates shown to 15.
+
+commit e3a069796a95b1b9625b26c796664a88c9aea7bc
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Sep 15 08:10:24 2011 +0000
+
+    Calculate dimensionless deformation parameter beta.
+
+commit 3804e1843c2c56082ab24fc3f02a1926d7868217
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Jul 29 09:53:58 2011 +0000
+
+    Bug fix for HF parity calculation.
+
+commit 3540a1372ee4027d5c4917f5b53e690609ef13f4
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Jul 29 08:55:08 2011 +0000
+
+    Calculate parity of HF single-particle states.
+    
+    Determine dimensionless quadrupole deformation parameters.
+
+commit 907188f0840fdc8188c35c7536eaba0a95f32f67
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Mon Jun 27 07:39:14 2011 +0000
+
+    Some bug removal and cleanups for form factors.
+
+commit 1321b026e94cff5cbf9a94fbb64e4e811341894f
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Jun 9 16:22:25 2011 +0000
+
+    Add transition point densities and formfactors.
+
+commit fa5d16250a7b130086a43494a4b4d728ba4f41fb
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Sun Mar 13 16:28:30 2011 +0000
+
+    Bug fix.
+
+commit b3a1bd62ee5425c87786c7b7ddf11003f1d965b7
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Sun Mar 13 15:32:30 2011 +0000
+
+    Fix MPI communication mismatch.
+
+commit dfd9a9660016dde22b0933529228fab075ea3b4d
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Sun Mar 13 15:29:05 2011 +0000
+
+    Add minenergyconmultivappcm.
+
+commit 071abbf2e0058aea92adbbba3c9187e402be492f
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Sun Mar 13 14:28:20 2011 +0000
+
+    Remove debugging info, fix MPI communication bug.
+
+commit c3c22443de9fa83e88fd6b7db46cb697549a7a3b
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Sun Mar 13 14:14:13 2011 +0000
+
+    Add debugging info.
+
+commit 87291137b4b636ef205ce45238a902fc67deff60
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Sun Mar 13 13:42:48 2011 +0000
+
+    Correct for a factor of 2.
+
+commit 7019a9f2ff6a9b88de2e99f70e11bbbc79b039f9
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Sun Mar 13 12:17:48 2011 +0000
+
+    minenergyconvappcm for variation after angular momentum and center-of-mass projection.
+
+commit 48f48693ad39e77215082db2df78443abd1079f4
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Mar 1 11:07:41 2011 +0000
+
+    Factor 1/2 missing (calculate l.s not l.sigma).
+
+commit d6b24904f81a28b3e5c101af740040d9c4993e05
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Feb 22 14:20:35 2011 +0000
+
+    Calculate single-particle spin-orbit for protons and neutrons. Needed to calculate spin-orbit contribution to charge radius.
+
+commit 08d80fe0091b84275a7ec52b99258cbb29e9554d
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Mon Jan 31 16:27:09 2011 +0000
+
+    Calculate two-body densitites in coordinate and momentum space.
+
+commit ef9293585ce4fe8cd4455e38cccd04ee72ad6a57
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Mon Jan 31 13:38:49 2011 +0000
+
+    Calculate two-body densities as function of distance and relative momentum.
+
+commit 6a8cee51656113483f63ffba8ab13d20fb8a9285
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Mon Jan 3 14:10:08 2011 +0000
+
+    calcquadrupole to calculate deformation parameters of intrinsic state.
+    Add proton and neutron beta constraints for minenergyconp.
+
+commit fcba46786178d8fa82b14777a8a50afce10d64d3
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Nov 30 13:31:25 2010 +0000
+
+    Delete old Makefile.inc's.
+
+commit 46ecd8eeac58d058208b9ed227dc4dfbf8a7d428
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Mon Nov 22 17:09:55 2010 +0000
+
+    Fix: calcgradTCM calculates gradient of -Tcm ...
+
+commit 5a8052fab1a0c43c14f1e76f3ebfb5d6aaf30cdc
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Mon Nov 22 16:40:16 2010 +0000
+
+    Fix: missing zerogradSlaterDet.
+
+commit 95304c5e6247217f58710ed94cea387d56264360
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Mon Nov 22 15:55:44 2010 +0000
+
+    minenergyconvappc minimizes projected energy minus Tcm of intrinsic state.
+
+commit 0e2b9df68b02cd5f5f7ea18c610d24035eb132ed
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Mon Nov 22 13:56:39 2010 +0000
+
+    calcpairs calculates number of pairs in (S,T) channels.
+
+commit d416021fa5513ad9cb11205f6f6deb6c38440563
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Oct 14 12:45:22 2010 +0000
+
+    Makefile.inc for GNU/OpenMPI on lenny64.
+
+commit e60d003283d02d8f3c499cf3d4c723f57e9fbfbd
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Aug 24 20:30:09 2010 +0000
+
+    Recalculate projected energies with fixed multiconfiguration states.
+
+commit 3b3580b621e6edbbc8d0ca1911bb4fbc1c9e11b5
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Jul 28 19:25:35 2010 +0000
+
+    Change direction of momentum: p=pB-pA.
+
+commit 63a242439a7805de9f2237bbbe137df33ccc501e
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Jun 24 11:40:32 2010 +0000
+
+    Add calchfdens to display density distributions of HF orbits.
+
+commit fe452dabef43297e37b53a3b3d3a1689de54f363
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Apr 28 07:34:52 2010 +0000
+
+    Revert.
+
+commit 6eaa4c7811e95557e5a3cdfcb48e016a7046afd6
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Apr 27 13:34:53 2010 +0000
+
+    Small cleanups.
+
+commit 60708f5546b1ea4cdd73f10b5d48a1ce1b88650a
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Mon Apr 26 15:22:39 2010 +0000
+
+    Make K-mixing threshold and minnorm command line parameters.
+
+commit 5a20c22c65c0f9127bfcaccfc4bcf96a3c314edf
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Mon Apr 12 13:16:28 2010 +0000
+
+    Bug fix in Formfactor calculation for L not 0.
+
+commit cb9c22a5ddda1fe58dd54ba972b07597e90e7f7c
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Apr 9 14:46:49 2010 +0000
+
+    Fix some bugs in form factor matrix elements for l unequal 0.
+
+commit bbe05513ec645bbe8d6d94dac095f5ba17331839
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Apr 8 12:18:13 2010 +0000
+
+    Write reduced form factor matrix elements. Do not include 1/(sqrt(4pi)*Z) factor any more.
+
+commit e1ef7fbdc1a6f156c4b76992703af34ada2f0cf5
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Apr 2 12:06:09 2010 +0000
+
+    Change threshold for K-mixing to 0.1 in VAPP minimization. Smaller threshold
+    occasionally leads to admixture of cm-excitation by K-mixing.
+
+commit b9b87a96331651e6a734792a31a0ec3cd7b44490
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Mar 31 10:02:14 2010 +0000
+
+    Bring minenergyconvappiso in sync with minenergyconvapp,
+    normalize resulting SlaterDet.
+
+commit 1230f0b014c54030d8c0f8794d4df1b5955d090e
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Mar 31 09:00:03 2010 +0000
+
+    Allow Interaction scaling in calcenergymultiprojsel.
+
+commit 4241a460d69f233f64c71c7b95dd3170308d61e4
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Feb 26 09:18:03 2010 +0000
+
+    Multiply spectroscopic amplitudes by sqrt((2jfin+1)/(2jini+1)) to comply
+    with ususal definition of spectroscopif factors. Only affects output by
+    calcspectroscopicamplitudes not the matrix elements.
+
+commit 24bc7cf7f39cc5fd891f2794a16444f0487f4492
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Nov 6 14:46:44 2009 +0000
+
+    Workspace SlaterDetAux does not work if SlaterDets with different A occur.
+
+commit 985ed22136d644965489639bc4119368d1261b3b
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Nov 3 10:29:32 2009 +0000
+
+    Add Makefile.inc for GNU compilers, OpenMPI on GSI theory etch32 machines.
+
+commit b890996892de9b031be7bd2c99d69e0dc1cdbb90
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Nov 3 10:24:28 2009 +0000
+
+    Add calcradiiallme.c for calculating AllRadii matrix elements.
+
+commit 6bc0793b27416ae4ce7645a2b18f23ff7f4a9895
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Nov 3 10:23:11 2009 +0000
+
+    Added neutron quadrupole and octupole constraints.
+
+commit 894e79321364728313bfeb23cc50c25fd0a3efe7
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Oct 21 13:29:19 2009 +0000
+
+    Add calcradiiall to calculate radii, includes
+    rpp (proton radius with respect to proton center-of-mass)
+    rnn (neutron radius with respect to neutron center-of-mass)
+
+commit 95fb01d3be6619e7d84688db7237497b09d13175
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Oct 20 07:57:30 2009 +0000
+
+    Forgotten entry in Makefile.
+
+commit dbc7121a2d6efc546f5bf6d9dcc6e2de582966dc
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Oct 20 07:47:44 2009 +0000
+
+    Add minenergyconorthogonalvapp for minimization orthogonal to given multiconfig states.
+
+commit 981515def86fe097e7e60ed3c26576050c95cfe0
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Sat Oct 17 09:15:32 2009 +0000
+
+    Makefile cleanups.
+    Remove minenergyconvapn.
+
+commit 03e884acbee72cbe2dcaa55be060afb97026ec41
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Oct 16 09:08:24 2009 +0000
+
+    Calculate proton/neutron radius constraints with respect to proton/neutron
+    center-of-mass instead of with respect to total center-of-mass.
+
+commit 33876612fcc3394736bbe25608ea870878e4e7dc
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Oct 15 08:51:15 2009 +0000
+
+    Add Neutron Radii, Quadrupole and Octupole constraints.
+    Proton/Charge constraints can now be specified by either E: or P: prefix.
+
+commit c459a69ec5aa208ecb7698a54a33f2a5dffa2eba
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Oct 9 20:20:49 2009 +0000
+
+    Add Symmetry constraints to minenergyconp.
+
+commit ee8c729327b14ea33fc7acc5a7445a765b2e77d2
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Sep 16 20:47:17 2009 +0000
+
+    Add beta and gamma constraints.
+
+commit 594a449065199533d6349174a9113e80dff0a8eb
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Sep 11 08:43:18 2009 +0000
+
+    Normalize SlaterDet.
+
+commit 077cdcab708ff27f5d3b788d7781fb097e6700ae
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Aug 12 19:13:32 2009 +0000
+
+    Distinguish between matrix element and interaction scaling.
+
+commit 84c3105bf868ace77fdae2f13153c7c8e4239d91
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Jul 30 13:14:24 2009 +0000
+
+    Nail center-of-mass to origin during minimization.
+
+commit 16788776a5ea7eaad47ec68cbf51e97f6e552b9f
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Jul 17 14:36:11 2009 +0000
+
+    Proton radius was wrong.
+
+commit 92cc06432735ad9e8715a5ff16a2da798adba876
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Jul 14 16:28:03 2009 +0000
+
+    Normalization of matrix elements is treated differently now.
+    
+    Do not use old matrix elements anymore !
+    
+    minenergy* will provide normalized intrinsic states,
+    projected matrix elements will be calculated with given intrinsic states
+    without additional normalization.
+
+commit 0b1e4140add99d11bbefebf17e19c020c89e3014
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Mon Jul 13 11:53:42 2009 +0000
+
+    Add constraints on symmetries of intrinsic state.
+
+commit 5ad4fad3e57870bb8ed52eddf81ac86459a498ac
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Jun 12 06:54:36 2009 +0000
+
+    Enforce center-of-mass before final calculation of energy.
+
+commit b7579710879b7c35f39ac1dd90b0f6adf87a24b6
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Jun 4 09:51:06 2009 +0000
+
+    Harmonize output of minimzation programs.
+
+commit 3ef3434157fb85b1ee08002c1935cee136d833fb
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri May 29 13:31:06 2009 +0000
+
+    Add FMD parameterizations for D3h and vxz-symmetry.
+
+commit 2d99326a26e740bf449e34f8df9690e3aefcdcb2
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Sun May 3 03:40:56 2009 +0000
+
+    Cleanups.
+
+commit ecf57518cb22b93a5701f97323fe6e65ed08161c
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Mon Apr 27 08:53:08 2009 +0000
+
+    Cleanups.
+
+commit 720ab1da4f132666661d4887cafae46fde9dc6d7
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Sat Apr 25 07:38:57 2009 +0000
+
+    Clean ups for projection and MultiSlaterDets.
+
+commit ef899563f602ebeeda2057d70eba250cc19e6fba
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Apr 22 08:52:17 2009 +0000
+
+    Fix bugs in expectation values and transition strengths.
+
+commit c05b4622c6b7fdc98952647db5d00120f5bdbf91
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Mon Apr 20 15:20:48 2009 +0000
+
+    Fix error in calculation of amplitudes.
+
+commit 645d9911b217a519186cfdbdd9bffc7b651591b2
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Apr 17 15:28:59 2009 +0000
+
+    Double-projected Di-cluster configurations with regular-grid angular momentum projection.
+
+commit 43a1d9983ec8d200659fb886e5938722c7ba170a
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Apr 10 12:32:03 2009 +0000
+
+    Add option '-t' to test existence/correctness of matrix elements.
+
+commit 8bfa6e8da33a6485aa4731894d53982aaf777a57
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Apr 2 14:13:41 2009 +0000
+
+    Comment out debugging information.
+
+commit 06f0108e2f6687d4f097fdc89bd77aef894a9745
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Apr 2 09:25:44 2009 +0000
+
+    Adapt form factor changes.
+
+commit 2fd57b66060c156dd44b3ea845824f9af8af7fb0
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Apr 2 08:53:16 2009 +0000
+
+    Changes for form factor calculations.
+
+commit 4242d4b75afd989b75e7be54ce9c56a42e6c9cd9
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Mar 11 16:45:39 2009 +0000
+
+    minenergyconvappiso minimizes energy for states symmetric and
+    antisymmetric in isospin using mirror Slater determinant (N=Z only).
+
+commit 45a54ceb0181e2a9ed7f977835ba21db65bf8842
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Mon Mar 9 08:14:02 2009 +0000
+
+    Reorganize output in minenergyconp.
+    Fix bug in ProjectedShellOccupations that gave wrong results for states using different number of Gaussians.
+
+commit 17d8a471c56edb74fa727fb1e9abb4139214fc5e
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Feb 6 14:12:30 2009 +0000
+
+    Small corrections.
+
+commit 078a3227776936b16fd22dc72a54f083715e8a5e
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Sun Dec 28 21:36:25 2008 +0000
+
+    Calculate all form factor multipoles together.
+
+commit d8d459aa64dfe3f2e65bfb000834fc6344d58e7c
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Nov 27 16:58:27 2008 +0000
+
+    Added switch for nuclear/coulomb output.
+
+commit 2b00488bcbfde173fc373eddce76ee2b0cf18acb
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Nov 27 16:49:13 2008 +0000
+
+    Add output of nuclear and coulomb matrix elements (VN and VC).
+
+commit be4a818ba6639aa32402f8d53ac1d1ac16d482b8
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Mon Nov 17 08:56:28 2008 +0000
+
+    Increase MAXSTATES and check number of states against MAXSTATES.
+
+commit 79237d525ead0e90fb43dcd6f9a9c718500fed36
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Nov 14 16:35:03 2008 +0000
+
+    Add printovlmeproj-fmd-frozen - extracts only overlap matrices.
+
+commit 38fa7902bc9e0af91e607a209b43228bdefdb830
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Oct 10 19:04:28 2008 +0000
+
+    Minimize Eproj + alpha Nproj.
+
+commit bcba730a89147789822d9c6048ea383c18e44280
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Oct 10 19:02:27 2008 +0000
+
+    Change merit calculation to put more emphasis on energy for sorting K-mixing states.
+    
+    Proton charge radius 0.895 fm^2 from Ingo Sick 2003, instead of old value of 0.801 fm^2.
+
+commit 99bd26eda29b0e683daadedd3d42d9e4c724c35b
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Oct 2 09:45:42 2008 +0000
+
+    Base minenergyconvapp on minenergyconmultivapp.
+
+commit fc0f6608d4a3a122423c74a7b3d49e93f799b7fb
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Sep 23 12:33:11 2008 +0000
+
+    Small changes.
+
+commit e91d6df70a9728741728e7beff80f0160526ebde
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Sep 17 14:59:50 2008 +0000
+
+    Small cleanups.
+
+commit 8f536810a59d12e383fc6e559976e07ffddcfc4b
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Sep 17 14:54:53 2008 +0000
+
+    Add minenergyconmultivapp for minimization after multiconfiguration.
+
+commit 2798f312312343fecbfbeee4fc442ea0b70ba581
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Jul 31 08:41:22 2008 +0000
+
+    Add minenergyconvapp - minimize E[Jpi] + alpha Eintr.
+    Parity projected densities, have to project bra and ket.
+
+commit 5d344b2e58d7ec8b5be066e3d86cbb56366952d9
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Jul 24 07:14:26 2008 +0000
+
+    Small cleanups.
+
+commit b994d9bb08cfed0d6fa8e1e4bc19748a39be2a04
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Jul 23 13:22:27 2008 +0000
+
+    Changed buf from dynamic to static in readprojectedMBMEfromFile. Allows
+    to read as many matrix elements as fit in memory.
+
+commit 819dab8c5b27f389101ba089949bdbb9a61235cc
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Jul 18 07:53:04 2008 +0000
+
+    printobsmeproj-fmd-frozen to extract matrix elements, separated for FMD
+    and frozen configurations.
+
+commit c524faf89f82be7466ab2015f186d6ed545b19ff
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Sat Apr 12 09:19:34 2008 +0000
+
+    Add child protection for selected j.
+
+commit c0f5753029fc2cdce574e91730bd9f1807711151
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Apr 11 13:27:37 2008 +0000
+
+    Provide output for calcenergy.
+
+commit b035d7ebe9745f1dd95df9c66421b52a5792fc37
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Apr 11 11:35:39 2008 +0000
+
+    Add Vp2 interaction component.
+
+commit de8efb708e40c84601c4829cc809572a8c5c985b
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Apr 9 15:52:16 2008 +0000
+
+    Correct units for B(E1) and B(M1) output.
+
+commit ac78e790f7fef4fb9cbb2dba2671826433cf90c7
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Mar 18 09:53:59 2008 +0000
+
+    Add T^2 constraint.
+
+commit 893e377b086e36811b11c14ed304fc5d284c65d2
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Sun Feb 10 16:19:07 2008 +0000
+
+    Add NOsci constraint to minenergyconvap.
+
+commit c3f03cf3f224d0b47c4d2ec9e4ae4b29e6cdb4ec
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Mon Feb 4 08:40:39 2008 +0000
+
+    Need to initialize HO Basis in Slaves.
+
+commit fd079f61aeb076c3ab83375b932679018f16bfd3
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Feb 1 16:46:44 2008 +0000
+
+    MPI versions for form factor and occupation number matrix elements.
+
+commit dbbf88daa21417e548f78fa9df29655e64f9beb4
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Feb 1 14:44:16 2008 +0000
+
+    MPI version for HO occupation numbers.
+
+commit 659b45023aa4a7aee5a0b2bb9c563fafbc79d19e
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Feb 1 12:29:09 2008 +0000
+
+    Option '-p' instead of '-P'.
+
+commit 0f63c3a0208613886277b50467e33ba1906ac82e
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Feb 1 12:17:10 2008 +0000
+
+    MPI version for calcformfactors.
+
+commit f95bc00e12bfb9ae7e574f9a2808c0164eb547bb
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Jan 8 16:59:32 2008 +0000
+
+    Better treatment of CM in ProjectedShellOccupations.
+    Add calcovlapproj.
+
+commit f74d8250d25df4a213a5f3a2141ecbd035ac35ed
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Nov 27 13:36:32 2007 +0000
+
+    Forgot calcmatterdensites.
+
+commit d8fb726acc0d1e22226b4a83f365622b5a7ac4e4
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Nov 27 13:26:38 2007 +0000
+
+    Use regular grid instead of zcw angles in Omega integration for form factors/densities.
+
+commit 425dcbabbc4a2dfdb2da0a5e8c892385cc45b644
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Sat Nov 17 08:55:49 2007 +0000
+
+    Initialize angintegration after orientation and not before.
+
+commit c6530c78b06a3d59af2df7eda71c0ef0f5cdad6e
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Nov 16 10:21:33 2007 +0000
+
+    Small bugfixes for MPI version.
+
+commit 4e1d95da6ea254abad486a785821c4fba72cbc76
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Nov 13 14:40:38 2007 +0000
+
+    Allow for adaptive integration in minenergyconvap.
+
+commit 831f10f6853865d4dd4ac3cfeb269eecc2d03b43
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Nov 13 10:09:02 2007 +0000
+
+    minenergyconvap for VAP minimization with K-mixing.
+
+commit 9cdfbb7bd266f693ceff59d7b9cb24f20509f11c
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Nov 6 15:07:36 2007 +0000
+
+    Extend S2 constraint to proton/neutron S2 constraint.
+
+commit 6359e8f00df594aabd7f50f639d618c5c429c5d6
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Oct 23 16:36:04 2007 +0000
+
+    Add -L/usr/lib/atlas in gnu Makefile.
+
+commit a9e413613eb16a54387fa9acd92bf3bd535c2b2c
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Oct 23 10:57:45 2007 +0000
+
+    Add calcshelloccupations and calcshelloccupationsme to Makefile.
+
+commit 904d776ba9455548f81fbd620e81bf32187f507f
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Mon Oct 22 08:14:31 2007 +0000
+
+    Use merits according to energy and overlap in calcenergymultiprojsel.
+
+commit b697fc608ea027390d76845934f2a6505c444c3a
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Oct 19 14:19:50 2007 +0000
+
+    Consistent treshold use.
+
+commit 5d6859f3b5452f6665a41dd6812627cbc2a015ed
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Sat Oct 13 17:20:00 2007 +0000
+
+    Add MeanOscillatorQuanta and ProjectedShellOccupations
+
+commit 84642c0de5370341ef6ba0d596769ca173c555ac
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Sat Oct 13 17:17:29 2007 +0000
+
+    Calculate harmonic oscillator excitations.
+
+commit 50a822d020b62d48a434ccacc10c94162b6e98a8
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Oct 12 01:12:10 2007 +0000
+
+    Calculate Harmonic Oscillator expectation value.
+
+commit 391a6d90caf7115af1c1cbadfc55a363a7c365cc
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Sep 20 08:22:17 2007 +0000
+
+    Small fixes for calcspectroscopicamplitudes.
+    Implement working l2 constraint.
+
+commit 57ab2b7b1200b34a4e1afcc557da39a521141bd6
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Sep 14 15:18:51 2007 +0000
+
+    Implement Gaussian integration tested by Benjamin for spectroscopic amplitudes.
+    Oscillator number constraint for protons and neutrons.
+
+commit f677e37533c679382a260359743a04b53d4e3d7e
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Jul 27 09:49:52 2007 +0000
+
+    Do not use automatic arrays for temporary matrix elements in
+    calcSlaterDet{OBME,TBME}* but memory allocation with malloc and free.
+
+commit fc06bd1a51045ed7c2bc07da0fe5db53464f23b8
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Jul 25 07:37:49 2007 +0000
+
+    Implement scaling of interaction components. Matrix elements are always calculated and stored with unscaled interaction. Function scaleprojectedObservablesMBME allows to scale the matrix elements. No indication of scaling in the output yet.
+
+commit ce88792fc641d2c39a372217bd05a990b3686166
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Jul 20 10:08:06 2007 +0000
+
+    Fix initangprojection for different particle numbers in Q and Qp.
+
+commit 79c1a50dee9249249ccafd30667d2218f03389c9
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Jul 11 14:47:59 2007 +0000
+
+    Add Coulomb output to printobsmeproj.
+    Add calctimereversal to calculate matrix element of time reversal operator.
+
+commit 12d071a2e3186f1026c95a24aaf79fd36d883b05
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Jul 11 11:06:22 2007 +0000
+
+    Added FMDr parameterization that keeps the width parameters a purely real.
+
+commit fb43abc085f3e0072a0230c05a9953b581fb5f00
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Jun 29 10:07:47 2007 +0000
+
+    Add axial symmetries up to axial9.
+
+commit 8324a467c4b3ac3b031f517afe862deeffa390ad
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Jun 22 14:50:56 2007 +0000
+
+    Add AMDd Parameterization which allows two common widths.
+
+commit c09383ffa33f7a861098831be2a00943834cecb0
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Mar 16 15:52:23 2007 +0000
+
+    Add neutron-{radius,quadrupole,octupole} constraints.
+    
+    Add calcmatterdensities (nucleon densities folded with proton charge distribution (lacking a matter distribution for protons and neutrons).
+
+commit 4d19c140429ccc06454fbeac1e70ea841dac9ac0
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Mar 6 10:20:15 2007 +0000
+
+    Small fix in output of J^pi.
+
+commit 0c52eb07c9dec7c6a0294926832842835de2fd38
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Feb 27 09:47:53 2007 +0000
+
+    Labels on left side had been commented out.
+
+commit fd1e1905bde395ee26d21f5f856838c1d27f1535
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Sun Feb 25 13:53:14 2007 +0000
+
+    Include g_V coupling constant in Gamow-Teller matrix elements.
+    
+    Calculate overlap dependence <Q|Q(beta)> and <Qp|Qp(beta)> in
+    angular momentum projection. <Q|Qp(beta)> does not work for GT matrix elements.
+
+commit e58003cafa08ce6e0c7931ea46d8cd91a08270fa
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Feb 13 15:57:51 2007 +0000
+
+    Projection: Specify parameters for SVD threshholds and minimal norms as command line parameters. The norm in K-mixing calculations gives now the overlap of the K-mixing eigenstate with the intrinsic state. In the multiconfiguration calculations the norm is calculated with normalized K-mixing eigenstates.
+    
+    Gamow-Teller transitions have been added again.
+
+commit e19e9aec959afe75b523f4aff4084009df9481ca
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Dec 6 11:58:28 2006 +0000
+
+    Fixed some bugs in Oscillator Constraint.
+
+commit 0dab0e9141df159412ab8f9f050683d1a0b4e464
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Dec 1 08:07:11 2006 +0000
+
+    Correct 5- and 6-point rules for Gauss-Sqr-Hermite integration.
+
+commit 64e87e0e9fbe2e59ae12bfd5e6dcd9c3c171fc6f
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Mon Nov 20 17:29:06 2006 +0000
+
+    Small cleanups.
+
+commit f6dc42dcc87ea8906337a3f8ad3ed0eac7ce0c97
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Mon Nov 6 09:15:20 2006 +0000
+
+    Added (isotropic) oscillator quanta constraint.
+
+commit ec53ac2428e4d9dc996e4e5efc64960e4c44e379
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Sat Oct 14 16:42:54 2006 +0000
+
+commit de4e623128cef188a6369f88245dd6436537c3cf
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Sat Oct 14 16:41:54 2006 +0000
+
+    Add tools/printovlmeproj and tools/printobsmeproj.
+
+commit 6cfb65fa97216860c120073cd7ef0069a41670bf
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Sep 13 18:13:25 2006 +0000
+
+    Cosmetic change for treatment of jmax (only concerns input and output).
+
+commit d0d30507696743ab325dfbca0843ecfb5d2901a3
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Sep 12 20:59:18 2006 +0000
+
+    Add calctransitionnumbershoproj to calculate transition density in
+    harmonic oscillator basis.
+
+commit 47af46ec077cf9fc845aef69caff12661208343d
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Sep 12 20:54:23 2006 +0000
+
+    Add calcoccupationnumbershoproj to calculate harmonic oscillator
+    occupation numbers for projected states.
+    
+    Add AMD paramaterization with fixed spin.
+
+commit e5cf96eb5e77efad12bd83e66d5ae4c9979720b4
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Sep 8 20:19:33 2006 +0000
+
+    Calculate density matrix in harmonic oscillator basis.
+    calcoccupationnumbersho calculates occupation numbers in HO basis.
+
+commit c6624dc81e5505e27fba13a53e9a392cad6bc9e1
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Aug 24 21:52:59 2006 +0000
+
+    Certainly not ...
+
+commit 59c1b2dc399aa4b25e5df92743d8bc456c8e71e7
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Aug 24 21:52:10 2006 +0000
+
+    Probably not ...
+
+commit c4246fdbb95623d5acc2a721bcf2b8808c8c293d
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Aug 24 21:51:12 2006 +0000
+
+    Maybe not ...
+
+commit ec7d0c931bb969b5456c23c2e69e41a1f883cc56
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Aug 24 21:49:24 2006 +0000
+
+    I will get it some day ...
+
+commit b969c83125bad65729a80ba2284fdd9403c17e19
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Aug 24 21:48:00 2006 +0000
+
+    Fix again.
+
+commit cb078d3152bab4328eb203201a83d85687f081b6
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Aug 24 21:46:08 2006 +0000
+
+    More fixes.
+
+commit 4dfa3cb730550d0abc528ef5b3f17d60d77ba8a5
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Aug 24 21:43:22 2006 +0000
+
+    Small fixes for formfactors squared.
+
+commit 7f6325665e7b9e9da05018ae9d805ac6d98a5de1
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Aug 24 21:32:52 2006 +0000
+
+    Output formfactors^2 for point densities.
+
+commit 687e33fa6f75ac4b68b3164b2bd7b3c94917366a
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Mon Aug 7 16:42:33 2006 +0000
+
+    Sync calcprojectedMultiMBMEmpi with calcprojectedMultiMBME.
+
+commit 57602fd434cc43be00de52cef321206f7a6b19a1
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Aug 4 18:18:05 2006 +0000
+
+    Bring minenergyconorthogonalproj on the same level as minenergyconproj.
+
+commit 40fee79e919a49be6aaaf0c380f384c4fd5d4666
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Aug 3 15:27:46 2006 +0000
+
+    Heiko Hergert added matrix elements for L2Tpp type interaction and fixed a bug
+    in prTrp matrix element.
+
+commit 5f605212bcb244dc682c5c6dd638b4c00b1f111d
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Aug 2 20:45:28 2006 +0000
+
+    Small fix.
+
+commit 96670d91189ed0ba45b95ae39cef6311ccb151f9
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Aug 2 19:58:28 2006 +0000
+
+    Small fix.
+
+commit cd7552936bc44ba36dcf2cdad029c2f7fb7bbc2c
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Aug 2 19:30:08 2006 +0000
+
+    Add mpicalcenergyprojmulti to Makefile.
+
+commit dc2fd48ff8d85dd8a3a31d20dca0f32575e814fa
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Aug 2 18:17:23 2006 +0000
+
+    Add DiClusterMultiProjSlaterDet parameterization for multi Slater det states.
+
+commit a2309b5fda0a0ad0d11e9853bb777ab93deb0cd5
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Aug 2 18:16:40 2006 +0000
+
+    Added ParameterizationClustersFMD.
+    Fix a memory leak in angprojection.
+
+commit 30d0564dc35f29a939b5a6519ada2e740b403728
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Jul 19 14:51:02 2006 +0000
+
+    Fixing some typos.
+
+commit 1d957c4daf3a0af418de06fbb3778c32726c9a23
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Jul 7 20:57:29 2006 +0000
+
+    Use calcprojectedHamiltonianmpi for initial and final calculation in
+    mpiminenergyconproj.
+
+commit b0253d7dac970dc565280307231c1b74f18887dd
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Jul 4 13:37:00 2006 +0000
+
+    Cleanup in Constraint output.
+
+commit 4e0df6bd9429913b6923228652bcef92c0f44f49
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Jul 4 13:36:01 2006 +0000
+
+    Cleanup in Constraint output.
+
+commit 1099866b698d0a44cca2158bfccaed422d06ed0e
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Mon Jul 3 20:55:12 2006 +0000
+
+    Minor changes in minenergyconproj.
+
+commit 03d1e8571b99a978d0b5b56a175c5adc04da8c2c
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Jun 22 19:54:12 2006 +0000
+
+    Orientation in calcOrientedOrientation now uses sign of octupole moment
+    to select final orientation.
+    
+    Major rework of minenergyconproj. Projection is now performed in the
+    body-fixed frame. Code and runtime output is still quite messy but
+    minimization performs quite well.
+    
+    Parallel minenergyconproj is now parallelized over the angle summation
+    providing a better performance. Slaves use MinimizerprojSlave.{c,h}.
+
+commit 5081d5df7a64c0c980bdadd2c8ee596dd3fcd1e4
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Jun 15 19:00:06 2006 +0000
+
+    Use ProjectionSlave for all MPI Projection codes. Eliminate ProjectedObservablesSlave.
+
+commit ed887bd4dcfcb7b5f9d8f028717040044d3cc365
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Jun 15 14:08:57 2006 +0000
+
+    Add calcenergyprojks to output all fixed K projections.
+    
+    Change K-mixing threshold to 10^-5.
+    
+    Modify minenergyconproj, not finalized yet.
+
+commit bf612c11a14f250828849d52d9b82d2ad06ec48d
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Jun 13 18:30:24 2006 +0000
+
+    Small fixes for MPI version.
+
+commit abba8807c98cab72f9c3efc9c442a50023e669bf
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Jun 13 18:27:28 2006 +0000
+
+    Major modifications of minenergyconproj.c.
+    Angular momentum projection is performed in body-fixed system. To do that
+    the body fixed system is rotated first onto the lab system. Final
+    gradients are then rotated back.
+
+commit 260bb3e988bc35b043f0df487354b9a866673110
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Jun 6 21:38:05 2006 +0000
+
+    Add cubic spline interpolation routine from TOMS 547.
+    Use interpolation to also write formfactors squared on a finer grid.
+
+commit e1b2d05c6dc16b08019908bd98a90b103f19d9b9
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Mon Jun 5 19:12:29 2006 +0000
+
+    Do it properly this time.
+
+commit 704857353217a9f5ba54325fce9be4c64471252e
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Mon Jun 5 18:32:37 2006 +0000
+
+    Speed up the calculation by optimizing matrix multiplication.
+
+commit 20fe6fea95f2bd470d22e0faeb1f60faed815433
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Mon Jun 5 17:49:45 2006 +0000
+
+    Output into file, progress report while running.
+
+commit 21f38a02498fac7cb482ed90250bf550011758f5
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Mon Jun 5 17:22:06 2006 +0000
+
+    Allow longer filenames in calcenergymultiprojsel.
+    Eliminate unncessary recalculation by loop reordering in calcbasisovlap.
+
+commit 865dd540b7ea2e868b7462ec46e8abb78cc960be
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Jun 2 19:17:05 2006 +0000
+
+    Don't select configuration if one of the K-mixing eigenstates has an
+    overlap bigger than threshold.
+
+commit de7171b183bf3c4939609b2d3840af825ba52e19
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Jun 1 02:36:18 2006 +0000
+
+    Adopt changes also for point densities/formfactors.
+
+commit 1c775566fad354347edcd1ee0ed44f708b5b4a87
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue May 30 21:33:07 2006 +0000
+
+    Speed up calctransitionprojectedMBME by doing calculation (essentially a
+    multiplication of three matrices) in two steps.
+
+commit c4670b9252524a3e26c3843e49a98cde9e1b1afb
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue May 30 18:55:09 2006 +0000
+
+    Some bugfixes for transition matrix elements.
+
+commit 62898c224572896d222f0b622928b8b681f359b6
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue May 30 17:58:05 2006 +0000
+
+    Add calcexpectprojectedMBMEipj and calctransitionprojectedMBMEipj routines
+    that only calculate the expectation and transition matrix elements for
+    selected states. These are used to speed up
+    calc[expectation|transition]charge[densities|formfactors].
+
+commit 8b7d5ca5454e7507b5bf3466ff6dbebbe83ac052
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri May 26 16:51:11 2006 +0000
+
+    Don't use automatic arrays but explicitly use malloc/free.
+
+commit 58a419ccf31cee0f165e12a7bf4e9eda4cc81625
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed May 24 18:45:52 2006 +0000
+
+    Some bugfixes for J != 0 in calcenergymultiprojsel.
+
+commit e85407b38502983c4462d67c1daeff88e748a694
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri May 12 21:48:16 2006 +0000
+
+    Indicate that calcenergymultiprojsel has finished to allow for restart.
+
+commit b6e5565e78a315c0a9a3c186a04ffc8473ee68b1
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue May 2 03:21:55 2006 +0000
+
+    Fix stupid bug in SortEigenstates.
+
+commit 7394edc3251be76665ed1bb28f2ea5f5b93b0658
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Sun Apr 30 01:46:14 2006 +0000
+
+    Allocate space for matrix element only on demand.
+
+commit 025f8091d1db2a38c5bd7124679764c88843b771
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Sat Apr 29 23:37:10 2006 +0000
+
+    Replace automatic array allocation by malloc.
+
+commit de53ecc26db8daef23114ab12d54a108edcd67c4
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Sat Apr 29 22:28:49 2006 +0000
+
+    Allow more configs.
+
+commit 18ec814e5ca313c0fd2933cbd842b158cae66caf
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Sat Apr 29 16:24:00 2006 +0000
+
+    Small fixes.
+
+commit 69aca077cc39c0dd9df28a920b6147b16494eced
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Sat Apr 29 15:42:51 2006 +0000
+
+    Use ProjectionSlave instead of ProjectedObservablesSlave.
+
+commit e98d8ebc78cd5a33c585c5ebecb44963e9208311
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Sat Apr 29 13:30:55 2006 +0000
+
+    Added calcconstraints. Calculates expectation values for constraint operators.
+
+commit e9660d99fbcc2bf5a6f0107ae870aff7d2489933
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Sat Apr 29 12:38:51 2006 +0000
+
+    Added calcenergymultiprojsel to iteratively select configurations.
+    
+    ProjectionSlave allows calculation of projected Observables and Ovlaps.
+
+commit 89c9cabb6d728d310a05dfa4c732d07dd0ad3130
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Apr 21 15:56:49 2006 +0000
+
+    Use malloc instead of automatic allocation of temporary arrays in
+    pseudoinverse and generalizedeigensystem as stack space may not be big enough.
+
+commit fea83776d94156b100afd63ab41adcdc9f89699c
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Apr 20 17:37:19 2006 +0000
+
+    Orient nucleus in recalcenergy.
+    Add calcInertia in fmd/SpatialOrientation to calc moment of inertia around y-axis, used for estimation of rotator energy in calcorientation.
+    moveboostorientSlaterDet now orients nucleus so that smallest moment of inertia is around z-axis. This is preferred for product rule angular momentum projection.
+
+commit d508d1c6f2a7bfc9b085b92d806141ed62172412
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Mon Apr 10 18:16:54 2006 +0000
+
+    Added missing size field to OpOne operator.
+
+commit a0a505c6f40b2325b27f2c1829f753ae6a76d03b
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Mar 28 20:41:12 2006 +0000
+
+    Add calcdensitiespmn by Ramin.
+
+commit b5a971923d35cfe3781dcb0b06c078090d1034bf
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Mar 1 22:26:02 2006 +0000
+
+    Added macros for the number of Gaussian parameters instead of hardcoded numbers.
+
+commit 50253d237cb09a78f6e90ac30317274bbe09c0f7
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Feb 10 17:16:07 2006 +0000
+
+    Added routines for writing complex vectors and matrices in binary format.
+
+commit 121c684e8d0f610f377f4f91bb33fe7f784acfc8
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Feb 3 15:10:29 2006 +0000
+
+    Multiconfig state with definite symmetry.
+
+commit 8a3f4ac7697f62e09bd8443f0d9ca4fd4e7c69a0
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Feb 3 15:09:06 2006 +0000
+
+    Add Multiconfig EM transitions.
+
+commit be59a5fd659615d22a4a4e601dd1d27b9f8d9db2
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Feb 3 15:04:34 2006 +0000
+
+    Build Multiconfig binaries.
+
+commit a8380dd3f7fa6ba0e19c7df9de8a706aaf4560a6
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Feb 2 22:01:25 2006 +0000
+
+    Rework MultiSlaterDet support.
+
+commit 26842f0b7c9df550d34649420387ff3e7815b1c5
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Jan 27 16:45:37 2006 +0000
+
+    Correct initProjection modifying projpar argument.
+
+commit 3a65a3e0b254398bf9887ca2a937c3f77fe7e140
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Jan 26 15:43:26 2006 +0000
+
+    Bugfix in calcexpectprojectedMBME.
+
+commit 2dea8dc946dcf6b98105c44a66939428c721775d
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Jan 25 22:09:23 2006 +0000
+
+    Dimensions in MPI communications were wrong.
+
+commit 95d9ee2644c9d70ab249a1abe3ccf1082b045ed7
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Jan 25 21:52:54 2006 +0000
+
+    Adapt for changes in ManyBodyOperator.
+
+commit 69c9746918e338828c3f68449cd9f4e10ae63a21
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Jan 25 19:35:38 2006 +0000
+
+    Added size field to ManyBodyOperator. This is necessary because of the only
+    partly used Observablesod. Use dim to access the defined matrix elements, size
+    to get size of the matrix elements.
+
+commit 8d980101b52dc96f1f6b293d88c12289fecbbf98
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Jan 5 16:54:59 2006 +0000
+
+    Corrected electric dipole matrix element as spotted by Sonia.
+
+commit 580f8850da79d826b121d265fa3fb4d4f4e7a296
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Dec 16 22:22:51 2005 +0000
+
+    Explcitly declare cuserid. Without that the PathScale compiler produces
+    buggy code.
+
+commit dcf3f365a21b1fee862b2e846ec0041ad0e8e215
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Dec 8 00:45:41 2005 +0000
+
+    Rename Makefile.inc for Opterons.
+
+commit 31afef6a80996a5afc967bf77aec5398875f4059
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Dec 7 22:21:36 2005 +0000
+
+    Slightly changed handling of svn version.
+
+commit 22bcb892b101140d42a32d82ef37e515d810b27e
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Dec 7 21:57:52 2005 +0000
+
+    Include current SVN version into infotext.
+
+commit b9616c8bab72ce3e57a7a975530865b70cca0985
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Dec 7 21:24:30 2005 +0000
+
+    Changed calcPotentialHF in fmd/Potential.c to return only total potential
+    matrix elements. Use calcPotentialsHF to get all components.
+    
+    Changed number of allowed interaction components to 32.
+
+commit fee4042fcc186cc35746244a2f26e6355e34574a
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Dec 7 21:20:19 2005 +0000
+
+    MPI compile and link options adjusted to comply with new usage.
+
+commit c6c66c52c53d711f27b4dd944930254b6fa0bceb
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Dec 7 19:20:51 2005 +0000
+
+    Use new values for proton radius r2p = 0.801 fm and neutron radius
+    r2n = -0.120.
+
+commit 718ef79d44e0a8eda7361c0d4a77c8aa461c8207
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Dec 2 17:26:34 2005 +0000
+
+    Add time reversal operator for Gaussian and SlaterDet. Add corresponding option in transformsldet.
+    Remove ddot and daxpy routines from numerics/lbfgs.f as they collide with blas
+    implementations.
+
+commit bd8b6d89f3601fb9d66df126a4d93bd186d4252b
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Dec 2 15:27:09 2005 +0000
+
+    Changed tests in Potential.c from (a <= x <= b) to (a <= x && x <= b).
+    Use -O Optimization. gcc -O2 produces buggy code with (at least)
+    Potential.c.
+
+commit 52cccce1fddc004132e1e10288ca8b5c2b06db76
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Fri Dec 2 02:37:36 2005 +0000
+
+    Minor fixes.
+
+commit f4918253dddaed546e4d405242fde35d2a8b238d
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Dec 1 23:08:21 2005 +0000
+
+    Added BroadcastTask(TASKSTART) in MinimizerSlaveod.
+
+commit 5b9d7c19e4f8666d4faafa2a30eff3e7b2e9bc3c
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Dec 1 22:42:59 2005 +0000
+
+    Changed Makefile for Intel compiler on i686. Added MPICFLAGS, MPILDFLAGS and
+    MPILIBS for more flexibility.
+
+commit 84f300d3d99bfe88b666f1a06b485052f862e83a
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Thu Dec 1 21:59:29 2005 +0000
+
+    Define Observables and Observablesod with a fixed sized array for the Potential
+    components. Max size is given by MAXINTERACTIONS defined in fmd/Interaction.h
+    
+    The Intel compiler treats the former typedef construct with a VLA different
+    than the GNU compiler.
+
+commit 813edcd3cbd68f4b8ad5ea4af6984a610446b379
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Nov 30 22:34:51 2005 +0000
+
+    task variable declared twice. Added cleanup() in minenergyconorthogonalproj.c
+
+commit 0149e0c59f5ba6b632d6d0b3e2e017660a430f41
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Nov 30 22:19:27 2005 +0000
+
+    Makefile for MSU HPCC.
+
+commit ffddb7a1b2cb785e7640eb65cf0788412f5bbf5c
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Nov 30 22:16:56 2005 +0000
+
+    Removed minenergyconorthproj.c.
+
+commit 0d296b8de130ac006ad952d55afb4330e424c43a
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Nov 30 22:14:24 2005 +0000
+
+    Added BroadcastTask(TASKSTART) at beginning to allow for graceful termination.
+
+commit 0bb7acb6158abb4c65bc7a7fdaf828b01d847c1b
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Nov 30 21:29:44 2005 +0000
+
+    Added BroadcastTask(TASKSTART) at beginning to allow for graceful termination.
+
+commit 56538831417557e3560162ea852d6150b53db237
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Nov 30 21:28:07 2005 +0000
+
+    Missing BroadcastSlaterDet in calcPotentialmpi. Missing MPI_Finalize() in Slave branches of calcenergyproj, minenergycon, minenergyconp.
+
+commit 139d47836f03d84ccfcf671a26ad3ac53d00881d
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Nov 30 19:56:42 2005 +0000
+
+    Remove old scripts.
+
+commit 53bc3bc54ef555608b77dd5362e15df4b76ced3f
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Nov 30 16:43:13 2005 +0000
+
+    Remove Makefile.inc link. This should be set independently on each machine.
+
+commit 3d26af0a37331f23d378b96f1a33a3002876f5ce
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Nov 29 21:02:51 2005 +0000
+
+    Added option -s to calchflevels to use and sort sp states according to n,j,l.
+
+commit eb84cdcfe5498ff3af9d6aca44b510a4f49a10a3
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Nov 29 19:16:05 2005 +0000
+
+    Addes calcorientation.c to calculate expectation values for angular
+    momentum and inertia tensor.
+
+commit f025b8c0d0fe760d6c78d64ecb4e9d88d3087bcc
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Nov 29 19:11:15 2005 +0000
+
+    Added calcnorm.c and calcnormp.c that calculate the norm of the Slater
+    determinant and the norm of the parity projected Slater determinant.
+
+commit 46319093a7219467552baa04589ea91d6c9cfdbf
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Nov 23 17:34:59 2005 +0000
+
+    Removed option -v from calchflevels. It did not make sense.
+
+commit e52b608fe704786b892aeab245beb640b0afc6ee
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Wed Nov 23 17:19:50 2005 +0000
+
+    Added option -v to calculate HF levels with potential only.
+
+commit 13757e3986b6873d397548b61d377f66965b07f3
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Nov 22 19:26:40 2005 +0000
+
+    Added fileexists to utils.c.
+    Write and read gzip'ed projectedMBMEs now.
+
+commit 59159af939cc2faad339d3afd56b8b470446d18c
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Nov 22 16:41:32 2005 +0000
+
+    Delete BAK directory.
+
+commit dd633129ea27005f06fa2132331a4e14e97561df
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Nov 22 16:40:08 2005 +0000
+
+    Delete obsolete directory.
+
+commit 3a65e20df3ab35d006bec767da96019947497dbe
+Author: Thomas Neff <t.neff@gsi.de>
+Date:   Tue Nov 22 16:38:15 2005 +0000
+
+    Initial import.
