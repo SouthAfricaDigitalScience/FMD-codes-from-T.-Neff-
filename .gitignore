@@ -1,5 +1,4 @@
 # created by Makefile
-.gitignore
 *~
 *.swp
 *.d

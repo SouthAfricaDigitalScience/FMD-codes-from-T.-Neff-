@@ -8,6 +8,8 @@ module add openmpi/1.8.8-gcc-${GCC_VERSION}
 module add lapack/3.6.0-gcc-${GCC_VERSION}
 
 echo "All tests have passed, will now build into ${SOFT_DIR}"
+echo $PWD
+cd $WORKSPACE
 make veryclean
 make
 export FMD=${SOFT_DIR}
