@@ -90,10 +90,9 @@ OBJSMPI = 	minenergy.mpi.o minenergyp.mpi.o \
 
 BINARIES = 	gnd2fmdpara sldet2fmdpara transformsldet joinsldets \
 	  	minenergy minenergyp \
-		minenergycon minenergycon-detQ minenergycon-detEQ minenergyconp minenergyconpar \
+		minenergycon minenergycon-detQ minenergyconp minenergyconpar \
 		minenergyconproj minenergyconorthogonalproj \
-                minenergyconproj-detEQ minenergycon-detEQ\
-                minenergyconvap-detEQ\
+                minenergyconproj-detEQ minenergycon-detEQ \
 		minenergyconvap minenergyconvapp minenergyconvappiso minenergyconvap-detEQ \
 		minenergyconvappc minenergyconvappcm \
 		minenergyconmultivapp minenergyconmultivappcm \
@@ -602,7 +601,8 @@ ifndef FMD
 		$(ECHO) "Environment Variable FMD not defined"
 else
 		mkdir -p $(FMD)/bin $(FMD)/data $(FMD)/lib
-		$(INSTALL)  $(BINARIES) $(BINARIESMPI) $(FMD)/bin
+		$(INSTALL) $(BINARIES) $(FMD)/bin
+		$(INSTALL) $(BINARIESMPI) $(FMD)/bin
 		$(INSTALL) data/* $(FMD)/data
 		$(INSTALL) lib/* $(FMD)/lib
 endif
