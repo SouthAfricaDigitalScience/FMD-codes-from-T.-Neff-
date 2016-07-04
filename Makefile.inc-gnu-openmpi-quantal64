@@ -1,0 +1,48 @@
+.PHONY: all doc clean veryclean install
+
+.SUFFIXES:
+.SUFFIXES: .c .f .o .mpi.o .a
+
+
+SHELL = /bin/sh
+ECHO = echo
+
+
+CC = gcc
+CLANGFLAGS = --std=gnu99 -Wall
+COPTFLAGS = -g -O2 -ffast-math
+CFLAGS = $(CLANGFLAGS) $(COPTFLAGS)
+
+FC = gfortran
+FLANGFLAGS = -Wall
+FOPTFLAGS = -g -O2 -ffast-math
+FFLAGS = $(FLANGFLAGS) $(FOPTFLAGS)
+
+LD = gcc
+LDFLAGS = -L. 
+SYSLIBS = -lgfortran -lm -lz
+
+LAPACKLIBS = -L/usr/lib/atlas -llapack -lblas
+
+MPICC = mpicc
+MPILD = mpicc
+MPILDFLAGS = -L.
+
+AR = ar
+
+INSTALL = install -m 750
+
+
+# implicit rules
+
+%.mpi.o: %.c
+	$(MPICC) -c -DMPI $(CPPFLAGS) $(CFLAGS) $< -o $@
+
+# automatic dependencies
+
+%.d: %.c
+	$(SHELL) -ec '$(CC) -MM $(CFLAGS) $< \
+		| sed '\''s/\($*\)\.o[ :]*/\1.o $@ : /g'\'' > $@; \
+		[ -s $@ ] || rm -f $@'
+
+

@@ -1,0 +1,21 @@
+/**
+   \mainpage
+
+   \section Installation
+
+   System specific settings for compilers and libraries are defined in Makefile.inc
+
+   Call <tt>make</tt> to compile everything.
+
+   Call <tt>make install</tt> to install binaries. 
+   Environment variable <tt>FMD</tt> defines installation directory.
+
+   Call <tt>make doc</tt> to create html documentation from source.
+
+   \section Example Usage
+
+   The mentioned files can be found in the <tt>exmaples</tt> directory.
+
+   
+
+*/

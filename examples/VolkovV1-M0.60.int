@@ -1,0 +1,20 @@
+# Volkov No 1 force
+#
+# Majorana exchange M=0.60 as used in
+# Phys.Rev.C60 064315 (K.Arai and A.T. Kruppa)
+#
+# with Coulomb
+
+<Interaction VolkovV1-M0.60>
+
+V	0.1835280	0.3362		Volkov
+V	-0.1055861	1.28
+sV	-0.1101167	0.3362
+sV	0.06335168	1.28
+tV	-0.1101167	0.3362
+tV	0.06335168	1.28
+tsV	-0.1101167	0.3362
+tsV	0.06335168	1.28
+
+VC	0.0		0.0		Coulomb
+</Interaction>

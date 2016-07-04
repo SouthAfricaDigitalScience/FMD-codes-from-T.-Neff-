@@ -1,0 +1,31 @@
+C*********************************************************************
+C  THIS IS THE SYSTEM-DEPENDENT PART OF DONLP2. ON A SYSTEM WITH GNU FORTRAN 
+C  WORKS WITHOUT ANY CHANGES .
+C  
+      REAL FUNCTION O8CPU(IDUM)
+C     IMPLICIT NONE
+C**** COMPUTES ELAPSED USER TIME (CPU-TIME) OF THE CURRENT RUN
+C     IN SECONDS
+C     MAY BE REPLACED BY AN OTHER SYSTEM DEPENDENT ROUTINE
+C     INTEGER IDUM
+C     REAL PROCSEC
+C     CALL SECOND(PROCSEC)
+C     O8CPU=PROCSEC
+      RETURN
+      END
+C***************************************************************************************
+      SUBROUTINE O8TIDA(CHAN)
+C     IMPLICIT NONE
+C     INTEGER CHAN
+C     CHARACTER*30 TIMDAT
+
+C     TIMDAT=CTIME(TIME8())
+C**** WRITE TIME AND DATE TO SEQUENTIAL ACCESS CHANNEL CHAN
+C     WRITE(CHAN,FMT='((A))') TIMDAT
+
+      RETURN
+      END
+C
+C
+C   END OF SYSTEM-DEPENDENT PART OF DONLP2
+C************************************************************

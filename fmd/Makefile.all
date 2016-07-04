@@ -1,0 +1,45 @@
+include ../Makefile.inc
+
+CFLAGS := $(CFLAGS) -I..
+
+OBJLIBS = ../libfmd.a
+OBJS 	= Gaussian.o SlaterDet.o Ovlap.o \
+	  CenterofMass.o KineticEnergy.o Interaction.o Potential.o \
+	  Oscillator.o \
+	  Radii.o Quadrupole.o AngularMomenta.o Isospin.o Parity.o \
+	  Observables.o SpatialOrientation.o \
+	  ElectroMagneticMultipole.o GamovTeller.o Formfactors.o \
+	  Densities.o Densities3d.o SpinDensities.o \
+	  gradGaussian.o gradSlaterDet.o gradCMSlaterDet.o \
+	  gradCenterofMass.o gradKineticEnergy.o gradPotential.o \
+	  ConstraintCMXP.o ConstraintT2.o ConstraintS2.o \
+	  ConstraintCM.o ConstraintJ.o ConstraintJ2.o ConstraintJ2.o \
+	  ConstraintR2.o \
+	  ConstraintDipole.o ConstraintQuadrupole.o ConstraintOctupole.o \
+	  Hamiltonian.o gradHamiltonian.o gradOscillator.o \
+	  Parameterization.o ParameterizationFMD.o ParameterizationFMDS.o \
+	  ParameterizationAMD.o ParameterizationAMDA.o ParameterizationAMDAS.o \
+	  ParameterizationAlpha.o ParameterizationAlphaA.o \
+	  ParameterizationAlphaC.o \
+	  ParameterizationCluster.o \
+	  ParameterizationCoreFMD.o \
+	  ParameterizationClusterFMD.o ParameterizationFixedClusterFMD.o \
+	  Projection.o cmprojection.o angprojection.o \
+	  ProjectedObservables.o
+
+all:	$(OBJLIBS)
+
+
+# create dependencies
+
+include $(OBJS:.o=.d)
+
+../libfmd.a:	$(OBJS)
+	$(AR) $(ARFLAGS) $@ $? 
+
+
+clean:
+	$(RM) $(OBJS)
+
+veryclean:
+	$(RM) $(OBJS) $(OBJS:.o=.d)

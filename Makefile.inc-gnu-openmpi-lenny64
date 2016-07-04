@@ -1,0 +1,54 @@
+.PHONY: all doc clean veryclean install
+
+.SUFFIXES:
+.SUFFIXES: .c .f .o .mpi.o .a
+
+
+SHELL = /bin/sh
+ECHO = echo
+
+
+CC = gcc-4.3
+CLANGFLAGS = --std=gnu99 -Wall
+COPTFLAGS = -g -O2 -march=core2 -ffast-math
+CFLAGS = $(CLANGFLAGS) $(COPTFLAGS)
+
+FC = gfortran-4.3
+FLANGFLAGS = -Wall
+FOPTFLAGS = -g -O2 -march=core2 -ffast-math
+FFLAGS = $(FLANGFLAGS) $(FOPTFLAGS)
+
+LD = gcc-4.3
+LDFLAGS = -static -L. 
+SYSLIBS = -lgfortran -lm
+
+LAPACKLIBS = -L/usr/lib/atlas -llapack -lblas
+
+# compare with mpicc -showme:compile, mpicc -showme:link
+
+MPICC = gcc-4.3
+MPICFLAGS = -I$(MPIPATH)/include -pthread $(CFLAGS)
+
+MPILD = gcc-4.3
+MPILDFLAGS = -static -L. -pthread -L$(MPIPATH)/lib
+MPILIBS = -lmpi -lopen-rte -lopen-pal -ldl -Wl,--export-dynamic -lnsl -lutil -lm -ldl
+
+
+AR = ar
+
+INSTALL = install -m 750
+
+
+# implicit rules
+
+%.mpi.o: %.c
+	$(MPICC) -c -DMPI $(CPPFLAGS) $(MPICFLAGS) $< -o $@
+
+# automatic dependencies
+
+%.d: %.c
+	$(SHELL) -ec '$(CC) -MM $(CFLAGS) $< \
+		| sed '\''s/\($*\)\.o[ :]*/\1.o $@ : /g'\'' > $@; \
+		[ -s $@ ] || rm -f $@'
+
+
