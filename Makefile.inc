@@ -19,7 +19,7 @@ FOPTFLAGS = -O2 -march=native -ffast-math
 FFLAGS = $(FLANGFLAGS) $(FOPTFLAGS)
 
 LD = gcc
-LDFLAGS = -L. -L$(LAPACK_DIR)/lib -L$(NCURSES_DIR)/lib -L$(OPENMPI_DIR)/include -L$(GCC_DIR)/lib64
+LDFLAGS = -L. -L$(LAPACK_DIR)/lib -L$(NCURSES_DIR)/lib -L$(OPENMPI_DIR)/lib -L$(GCC_DIR)/lib64
 SYSLIBS = -lgfortran -lm -lz
 
 LAPACKLIBS = -llapack -lblas
@@ -32,7 +32,7 @@ MPICC = mpicc
 MPICFLAGS = -I$(MPIPATH)/include -I$(MPIPATH)/include/openmpi -pthread $(CFLAGS)
 
 MPILD = mpicc
-MPILDFLAGS = -L. -pthread -L$(MPIPATH)/lib
+MPILDFLAGS = -L. -pthread -L$(MPI_DIR)/lib -L$(LAPACK_DIR)/lib -L$(NCURSES_DIR)/lib -L$(OPENMPI_DIR)/lib -L$(GCC_DIR)/lib64
 MPILIBS = -lmpi -lopen-rte -lopen-pal -ldl -Wl,--export-dynamic -lnsl -lutil -lm -ldl
 
 
