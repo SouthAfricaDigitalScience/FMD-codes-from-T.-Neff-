@@ -1,7 +1,7 @@
 #!/bin/bash -e
 # this should be run after check-build finishes.
 . /etc/profile.d/modules.sh
-module load ci
+module load deploy
 module add ncurses
 module add gcc/5.2.0
 module add openmpi/1.8.8-gcc-${GCC_VERSION}
