@@ -38,5 +38,6 @@ prepend-path LD_LIBRARY_PATH   $::env(FMD_DIR)/lib
 prepend-path GCC_INCLUDE_DIR   $::env(FMD_DIR)/include
 prepend-path CFLAGS            "-I${FMD_DIR}/include"
 prepend-path LDFLAGS           "-L${FMD_DIR}/lib"
+prepend-path PATH              "$::env(FMD_DIR)/bin"
 MODULE_FILE
 ) > ${PHYSICAL_MODULES}/${NAME}/${VERSION}
