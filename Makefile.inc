@@ -18,7 +18,7 @@ FLANGFLAGS = -Wall
 FOPTFLAGS = -O2 -march=native -ffast-math
 FFLAGS = $(FLANGFLAGS) $(FOPTFLAGS)
 
-LD = gcc-4.7
+LD = gcc
 LDFLAGS = -L. -L$(LAPACK_DIR)/lib -L$(NCURSES_DIR)/lib -L$(OPENMPI_DIR)/include -L$(GCC_DIR)/lib64
 SYSLIBS = -lgfortran -lm -lz
 

@@ -5,7 +5,6 @@
 *.d
 *.o
 *.a
-Makefile.inc
 git_version.c
 doc
 gnd2fmdpara

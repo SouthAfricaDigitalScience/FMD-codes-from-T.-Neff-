@@ -6,7 +6,7 @@ LIBS = 		git_version.o -lfmd -lnumerics -lmisc $(LAPACKLIBS) $(SYSLIBS)
 LIBSMPI =	git_version.o -lfmdmpi -lfmd -lnumerics -lmisc $(LAPACKLIBS) $(MPILIBS) $(SYSLIBS)
 
 DIRS	= 	fmd fmdmpi numerics misc
-OBJLIBS = 	git_version.o libfmd.a libnumerics.a libmisc.a 
+OBJLIBS = 	git_version.o libfmd.a libnumerics.a libmisc.a
 OBJLIBSMPI =	git_version.o libfmdmpi.a libfmd.a libnumerics.a libmisc.a
 
 OBJS =		gnd2fmdpara.o sldet2fmdpara.o transformsldet.o joinsldets.o \
@@ -63,7 +63,7 @@ OBJS =		gnd2fmdpara.o sldet2fmdpara.o transformsldet.o joinsldets.o \
 		calcoccupationnumbershoprojme.o calcoccupationnumbershoprojmes.o \
 		calcshelloccupations.o calcshelloccupationsme.o \
 		calctimereversal.o \
-               
+
 
 OBJSMPI = 	minenergy.mpi.o minenergyp.mpi.o \
 		minenergycon.mpi.o MinimizerDONLP2.mpi.o \
@@ -133,7 +133,7 @@ BINARIES = 	gnd2fmdpara sldet2fmdpara transformsldet joinsldets \
 		calcoccupationnumbershoprojme calcoccupationnumbershoprojmes \
 		calcshelloccupations calcshelloccupationsme \
 		calctimereversal \
-             
+
 
 BINARIESMPI =	mpiminenergy mpiminenergyp \
 		mpiminenergycon mpiminenergyconp \
@@ -602,7 +602,7 @@ ifndef FMD
 		$(ECHO) "Environment Variable FMD not defined"
 else
 		mkdir -p $(FMD)/bin $(FMD)/data $(FMD)/lib
-		$(INSTALL) $(BINARIES) $(BINARIESMPI) $(FMD)/bin
+		$(INSTALL)  $(BINARIES) $(BINARIESMPI) $(FMD)/bin
 		$(INSTALL) data/* $(FMD)/data
 		$(INSTALL) lib/* $(FMD)/lib
 endif
