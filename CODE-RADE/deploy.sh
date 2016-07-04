@@ -27,9 +27,9 @@ proc ModulesHelp { } {
 }
 
 module add ncurses
-module add gcc/5.2.0
-module add openmpi/1.8.8-gcc-5.2.0
-module add lapack/3.6.0-gcc-5.2.0
+module add gcc/${GCC_VERSION}
+module add openmpi/1.8.8-gcc-${GCC_VERSION}
+module add lapack/3.6.0-gcc-${GCC_VERSION}
 
 module-whatis   "$NAME $VERSION : See https://github.com/SouthAfricaDigitalScience/FMD-deploy"
 setenv FMD_VERSION       $VERSION
