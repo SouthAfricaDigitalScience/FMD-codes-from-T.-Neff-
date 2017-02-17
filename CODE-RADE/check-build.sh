@@ -42,7 +42,7 @@ module add openmpi/1.8.8-gcc-${GCC_VERSION}
 module add lapack/3.6.0-gcc-${GCC_VERSION}
 
 setenv       FMD_VERSION       $VERSION
-setenv       FMD_DIR           /apprepo/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION
+setenv       FMD_DIR           /data/ci-build/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION
 prepend-path LD_LIBRARY_PATH   $::env(FMD_DIR)/lib
 prepend-path GCC_INCLUDE_DIR   $::env(FMD_DIR)/include
 prepend-path CFLAGS            "-I${FMD_DIR}/include"
